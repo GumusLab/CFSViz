@@ -1,0 +1,17 @@
+{
+"nodes": [
+    {"id": "ABC1", "group": "None", "kd": 0},
+    {"id": "DEF3", "group": "NKM4", "kd": 1},
+    {"id": "JEK2", "group": "BCellM7", "kd": 0},
+    {"id": "JWU3", "group": "MonoM6", "kd": 0},
+    {"id": "DXH3", "group": "NKM13", "kd": 1},
+    {"id": "JBI1", "group": "NKM9", "kd": 0}
+], 
+"links": [
+    {"source": "DEF3", "target": "ABC1", "value": 1},
+    {"source": "JEK2", "target": "DEF3", "value": 1},
+    {"source": "DEF3", "target": "JWU3", "value": 1},
+    {"source": "DXH3", "target": "DEF3", "value": 1},
+    {"source": "DEF3", "target": "JBI1", "value": 1}
+]
+}
