@@ -15,7 +15,7 @@
   }
 
 
-  .button1{
+  .button1:hover{
     background-color: #B1C1C0;
     color: white; 
     outline: 2px solid black;
@@ -41,7 +41,7 @@
     color: white;
   }
 
-  .button6:hover {
+  .button6 {
     background-color: #2E294E;
     color: white;
   }
@@ -90,14 +90,14 @@
     const Graph = ForceGraph3D()
         .backgroundColor("#ffffff")
       (elem)
-        .jsonUrl('complete_data.json')
+        .jsonUrl('NKM9_final.json')
         .nodeLabel(node => (`<span style="color: black">${node.id}</span>`))
         .nodeThreeObject(node => colorNodes(node))
         //.nodeAutoColorBy('group')
         .linkDirectionalArrowLength(3.5)
         .linkDirectionalArrowRelPos(1)
         .linkWidth(1)
-        .linkColor(() => 'rgb(150,150,150)')
+        .linkColor(() => 'rgb(0,0,0)')
         .linkOpacity(0.5)
         //.linkAutoColorBy('group')
         .onNodeHover(node => elem.style.cursor = node ? 'pointer' : null)
@@ -129,9 +129,25 @@
       color = "#2E294E"
     else
       color = "#B1C1C0"
-        
+    
+    if (node.kd == "1")
       obj = new THREE.Mesh(
-              new THREE.SphereGeometry(10),
+              new THREE.SphereGeometry(30),
+              //new THREE.BoxGeometry(30, 30, 30),
+              //new THREE.MeshBasicMaterial({ depthWrite: true, transparent: false, opacity: 0 })
+              new THREE.MeshLambertMaterial({
+            //depthWrite: false,
+            transparent: false,
+            opacity: 1,
+            wireframe: false,
+            emissive: "#000000",
+            color: color //FFAE03
+            //vertexColors: THREE.FaceColors,
+          })
+            );
+    else    
+      obj = new THREE.Mesh(
+              new THREE.SphereGeometry(5),
               //new THREE.MeshBasicMaterial({ depthWrite: true, transparent: false, opacity: 0 })
               new THREE.MeshLambertMaterial({
             depthWrite: false,
@@ -150,12 +166,4 @@
       return obj;
   }
   </script>
-
-<div class="dg ac">
-  <div class="dg main a" style="position: absolute;" onclick="window.location.href='index.html'"> 
-    <img src="logo.png" alt="COVID Omics 3D Vizualization" style="width: 250px; margin-top: 10px;" >
-    
-  </div>
-</div>
-
 </body>
