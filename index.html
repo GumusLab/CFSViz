@@ -1,4 +1,4 @@
-<head>
+ <head>
   <style> body { margin: 0; } 
   .btn
   {
@@ -95,7 +95,7 @@
     const Graph = ForceGraph3D()
         .backgroundColor("#ffffff")
       (elem)
-        .jsonUrl('complete_data.json')
+        .jsonUrl('sample.json')
         .nodeLabel(node => (`<span style="color: black">${node.id}</span>`))
         .nodeThreeObject(node => colorNodes(node))
         //.nodeAutoColorBy('group')
@@ -119,21 +119,71 @@
         });
 
 
+
+
   function colorNodes(node) {
 
     var color = "#000000"
-    if (node.group == "NKM4")
+    if (node.group == "NKM4") {
       color = "#AB3428"
-    else if (node.group == "BcellM7")
-      color = "#FF8C42"
-    else if (node.group == "MonoM6")
+      node.x = -2000 
+      node.y = 2000 
+      node.fx = -2000 + (Math.random() * 100)
+      node.fy = 2000 + (Math.random() * 100)
+      // node.z = 100
+      // node.fz = 100
+    }
+
+    else if (node.group == "BCellM7") {
+      color = "#FF8C42"      
+      node.x = 2000
+      node.y = 2000
+      node.fx = 2000 + (Math.random() * 100)
+      node.fy = 2000 + (Math.random() * 100)
+      // node.z = 20
+      // node.fz = 20
+    }
+      
+    else if (node.group == "MonoM6") {
       color = "#036D19"
-    else if (node.group == "NKM13")
+      node.x = 2000
+      node.y = -2000
+      node.fx = 2000 + (Math.random() * 100)
+      node.fy = -2000 + (Math.random() * 100)
+      // node.z = 20
+      // node.fz = 20
+    }
+
+    else if (node.group == "NKM13") {
       color = "#475AFF"
-    else if (node.group == "NKM9")
+      node.x = -2000
+      node.y = -2000
+      node.fx = -2000 + (Math.random() * 100)
+      node.fy = -2000 + (Math.random() * 100)
+      // node.z = 50
+      // node.fz = 50
+    }
+
+    else if (node.group == "NKM9") {
       color = "#2E294E"
-    else
+      node.x = 0
+      node.y = 300
+      node.fx = 0 + (Math.random() * 100)
+      node.fy = 300 + (Math.random() * 100)
+      // node.z = 100
+      // node.fz = 100
+      }
+
+    else {
       color = "#B1C1C0"
+      node.x = 0
+      node.y = 0
+      node.fx = 0 + (Math.random() * 100)
+      node.fy = 0 + (Math.random() * 100)
+      // node.z = 200
+      // node.fz = 200
+    }
+      
         
       obj = new THREE.Mesh(
               new THREE.SphereGeometry(10),
@@ -150,6 +200,12 @@
             );
     
 
+    // node.x = 0
+    // node.y = 0
+    // //node.z = 0
+    // node.fx = 0
+    // node.fy = 0
+    //node.fz = 100
     
 
       return obj;
