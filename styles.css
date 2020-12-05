@@ -1,0 +1,128 @@
+/*container for gene search box*/
+#gene_search_container{
+  margin-top: 10px;
+  /*needed for some reason*/
+  margin-right: 0px;
+  display: none;
+}
+
+/*gene search box */
+#gene_search_box{
+  width:120px;
+  /*float:left;*/
+  /*display: none;*/
+}
+
+/*gene search button*/
+#gene_search_button{
+  /*width:50px;*/
+  /*float:left;*/
+  margin-top:-2px;
+  /*display: none;*/
+}
+
+/*clear float left*/
+#clear{
+  clear:both;
+}
+
+/*fizing jquery autocomplete*/
+.ui-menu-item{
+  float:left;
+  clear: left;
+}
+
+/*move down submit button*/
+#gene_search_submit{
+  margin-top:5px;
+}
+.btn
+  {
+    background-color: white;
+    border: 3px solid black;
+    margin: 8px;
+    height: 30px; 
+    width: 120px;
+    transition: 0.3s;
+  }
+
+  button {
+    display: block
+  }
+
+  #logo{ 
+	position:fixed; 
+	top:15; 
+	left:0; 
+  } 
+
+  #legend{
+    position: fixed;
+    top: 420;
+    left:17;
+  }
+
+  .button1{
+    background-color: #B1C1C0;
+    color: white; 
+  } 
+
+  .button2 {
+    background-color: #AB3428;
+    color: white;
+    outline: 3px solid black;
+  }
+
+  .button3 {
+    background-color: #FF8C42;
+    color: white;
+  }
+
+  .button4 {
+    background-color: #036D19;
+    color: white;
+  }
+
+  .button5 {
+    background-color: #475AFF;
+    color: white;
+  }
+
+  .button6 {
+    background-color: #2E294E;
+    color: white;
+  }
+
+  .button1:hover {
+    background-color: #e1e1e1;
+    color: black; 
+  } 
+
+  .button2:hover {
+    background-color: #ca675e;
+    color: white;
+  }
+
+  .button3:hover {
+    background-color: #e6a882;
+    color: white;
+  }
+
+  .button4:hover {
+    background-color: #529f61;
+    color: white;
+  }
+
+  .button5:hover {
+    background-color: #8890dc;
+    color: white;
+  }
+
+  .button6:hover {
+    background-color: #7067a7;
+    color: white;
+  }
+
+  #allnodes {
+    font-weight: bold;
+  }

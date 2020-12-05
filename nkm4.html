@@ -1,100 +1,10 @@
 <head>
   <style> body { margin: 0; } 
-  .btn
-  {
-    background-color: white;
-    border: 3px solid black;
-    margin: 8px;
-    height: 30px; 
-    width: 120px;
-    transition: 0.3s;
-  }
-
-  button {
-    display: block
-  }
-
-  #logo{ 
-	position:fixed; 
-	top:15; 
-	left:0; 
-  } 
-
-  #legend{
-    position: fixed;
-    top: 420;
-    left:17;
-  }
-
-  .button1{
-    background-color: #B1C1C0;
-    color: white; 
-  } 
-
-  .button2 {
-    background-color: #AB3428;
-    color: white;
-    outline: 3px solid black;
-  }
-
-  .button3 {
-    background-color: #FF8C42;
-    color: white;
-  }
-
-  .button4 {
-    background-color: #036D19;
-    color: white;
-  }
-
-  .button5 {
-    background-color: #475AFF;
-    color: white;
-  }
-
-  .button6 {
-    background-color: #2E294E;
-    color: white;
-  }
-
-  .button1:hover {
-    background-color: #e1e1e1;
-    color: black; 
-  } 
-
-  .button2:hover {
-    background-color: #ca675e;
-    color: white;
-  }
-
-  .button3:hover {
-    background-color: #e6a882;
-    color: white;
-  }
-
-  .button4:hover {
-    background-color: #529f61;
-    color: white;
-  }
-
-  .button5:hover {
-    background-color: #8890dc;
-    color: white;
-  }
-
-  .button6:hover {
-    background-color: #7067a7;
-    color: white;
-  }
-
-  #allnodes {
-    font-weight: bold;
-  }
   </style>
-
 
   <script src="//unpkg.com/3d-force-graph"></script>
   <script src="//unpkg.com/three"></script>
+  <link rel="stylesheet" href="styles.css">
 
   <!--<script src="../../dist/3d-force-graph.js"></script>-->
 </head>
@@ -122,6 +32,21 @@
     <button class="btn button6" id="module5" onclick="window.location.href = 'nkm9.html'">
       NKM9
     </button>
+
+
+    <!-- https://bl.ocks.org/cornhundred/1b9404efc32d6b135fab -->
+
+    <div id='gene_search_container' class='row'>
+      <input id='gene_search_box' type="text" class="form-control" placeholder="Input Gene">
+
+      <div id='gene_search_button' class="btn-group"  >
+        <label id='gene_search_submit' class="btn btn-primary active ">
+          <input type="radio"> Search
+        </label>
+      </div>
+    </div>
+
+    
     
   </div>
 
