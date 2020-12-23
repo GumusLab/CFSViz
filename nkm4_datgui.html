@@ -1,0 +1,239 @@
+<head>  
+  
+    <script src="//unpkg.com/3d-force-graph"></script>
+    <script src="//unpkg.com/three"></script>
+    <script src="//unpkg.com/dat.gui"></script>
+    <script src="//unpkg.com/three-spritetext"></script>
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  
+    <link rel="stylesheet" href="styles.css">
+
+    <!--<script src="../../dist/3d-force-graph.js"></script>-->
+  </head>
+  
+  <body>
+      
+  
+    <div id="3d-graph"></div>
+  
+    <div style="position: absolute; top: 150px; left: 5px;">
+      <button class="btn button1" id="allnodes" onclick="window.location.href = 'index.html'">
+        ALL NODES
+      </button>
+      <button class="btn button2" id="module1" onclick="window.location.href = 'nkm4.html'">
+        NKM4
+      </button>
+      <button class="btn button3" id="module2" onclick="window.location.href = 'bcellm7.html'">
+        BCellM7
+      </button>
+      <button class="btn button4" id="module3" onclick="window.location.href = 'monom6.html'">
+        MonoM6
+      </button>
+      <button class="btn button5" id="module4" onclick="window.location.href = 'nkm13.html'">
+        NKM13
+      </button>
+      <button class="btn button6" id="module5" onclick="window.location.href = 'nkm9.html'">
+        NKM9
+      </button>
+      
+    </div>
+
+  
+    <script type="module">
+
+    import {UnrealBloomPass} from '//unpkg.com/three/examples/jsm/postprocessing/UnrealBloomPass.js';
+    import {EffectComposer} from '//unpkg.com/three/examples/js/postprocessing/EffectComposer.js';
+    // import { UnrealBloomPass } from './jsm/postprocessing/UnrealBloomPass.js';
+
+    const elem = document.getElementById('3d-graph');
+      
+    const Graph = ForceGraph3D()
+          .backgroundColor("#ffffff")
+        (elem)
+          .jsonUrl('NKM4_final.json')
+          .nodeLabel(node => (`<span style="color: black">${node.id}</span>`))
+          .nodeThreeObject(node => colorNodes(node))
+          //.nodeAutoColorBy('group')
+          .linkDirectionalArrowLength(8)
+          .linkDirectionalArrowRelPos(1)
+          .linkWidth(1)
+          .linkColor(() => 'rgb(0,0,0)')
+          .linkOpacity(0.5)
+          // .linkAutoColorBy('group')
+          .onNodeHover(node => elem.style.cursor = node ? 'pointer' : null)
+          .onNodeClick(node => {
+            // Aim at node from outside it
+            const distance = 40;
+            const distRatio = 1 + distance/Math.hypot(node.x, node.y, node.z);
+  
+            Graph.cameraPosition(
+              { x: node.x * distRatio, y: node.y * distRatio, z: node.z * distRatio }, // new position
+              node, // lookAt ({ x, y, z })
+              3000  // ms transition duration
+            );
+          });
+
+
+    // Make the nodes glow - not working rn - https://www.gitmemory.com/issue/vasturiano/3d-force-graph/265/571380757
+    // const bloomPass = new UnrealBloomPass();
+    // bloomPass.strength = 3;
+    // bloomPass.radius = 1;
+    // bloomPass.threshold = 0.1;
+    // Graph.postProcessingComposer().addPass(bloomPass);
+
+    const compose = new EffectComposer(renderer)
+    composer.addPass(new RenderPass(scene, camera))
+    const bloomPass = new BloomPass()
+    composer.addPass(bloomPass)
+
+    function render() {
+      // the normal renderer is being replace by composer
+     // renderer.render(scene, camera); 
+     composer.render();
+     requestAnimationFrame(render);
+    }
+     
+     var composer = new EffectComposer( Graph.renderer());
+          var renderScene = new RenderPass(Graph.scene(), Graph.camera())
+          composer.addPass( renderScene );
+          composer.addPass( bloomPass );
+          composer.setSize(window.innerWidth, window.innerHeight)
+          Graph.renderer(()=>composer.renderer()) 
+
+    
+
+
+
+    
+    function colorNodes(node) {
+  
+      var obj = null;
+      var color = "#000000"
+      if (node.group == "NKM4")
+        color = "#AB3428"
+      else if (node.group == "BcellM7")
+        color = "#FF8C42"
+      else if (node.group == "MonoM6")
+        color = "#036D19"
+      else if (node.group == "NKM13")
+        color = "#475AFF"
+      else if (node.group == "NKM9")
+        color = "#2E294E"
+      else
+        color = "#B1C1C0"
+      
+      if (node.kd == "1")
+        obj = new THREE.Mesh(
+                new THREE.SphereGeometry(30),
+                //new THREE.BoxGeometry(30, 30, 30),
+                //new THREE.MeshBasicMaterial({ depthWrite: true, transparent: false, opacity: 0 })
+                new THREE.MeshLambertMaterial({
+              //depthWrite: false,
+              transparent: false,
+              opacity: 1,
+              wireframe: false,
+              emissive: "#000000",
+              color: color //FFAE03
+              //vertexColors: THREE.FaceColors,
+            })
+              );
+      else    
+        obj = new THREE.Mesh(
+                new THREE.SphereGeometry(5),
+                //new THREE.MeshBasicMaterial({ depthWrite: true, transparent: false, opacity: 0 })
+                new THREE.MeshLambertMaterial({
+              depthWrite: false,
+              transparent: false,
+              opacity: 1,
+              wireframe: false,
+              //emissive: "#181818",
+              color: color //FFAE03
+              //vertexColors: THREE.FaceColors,
+            })
+              );  
+        return obj;
+
+    }
+
+
+    const Settings = function() {
+      this.nodeKeys = "";
+      };
+    
+    const settings = new Settings();
+    // const gui = new dat.GUI();
+
+    var gui = new dat.GUI();
+    gui.domElement.id = 'gui';
+
+    const controllerSearch = gui.add(settings, "nodeKeys",["DOK3","WDR53"]).name("Select Node");
+
+
+    var node_key = settings.nodeKeys
+
+    controllerSearch.onChange(updateSearch);
+
+    function updateSearch() {
+
+        Graph.nodeThreeObject(node => {
+            if (settings.nodeKeys == "DOK3") {
+                if (node.id == "DOK3") {
+                    colorNodes(node)
+                    const distance = 40;
+                    const distRatio = 1 + distance/Math.hypot(node.x, node.y, node.z);
+                    Graph.cameraPosition(
+                        { x: node.x * distRatio, y: node.y * distRatio, z: node.z * distRatio }, // new position
+                        node, // lookAt ({ x, y, z })
+                        3000  // ms transition duration
+                        );
+                }
+            }
+
+        })}
+
+        // function lookup (node) {
+        //     Graph.nodeThreeObject(node => colorNodes(node)) 
+        //     const distance = 40;
+        //     const distRatio = 1 + distance/Math.hypot(node.x, node.y, node.z);
+        //     Graph.cameraPosition(
+        //     { x: node.x * distRatio, y: node.y * distRatio, z: node.z * distRatio }, // new position
+        //     node, // lookAt ({ x, y, z })
+        //     3000  // ms transition duration
+        //     )
+              
+        // }
+
+
+        // function updateSearch() {
+        //     Graph.nodeThreeObject(node => (settings.nodeKeys == "DOK3" && node.id == "DOK3" )              
+        //         ? lookup(node) : null)
+        //     }
+        
+        // {
+        //     if (settings.nodeKeys == "DOK3") {
+        //         if (node.id == "DOK3") {
+        //             colorNodes(node)
+        //             const distance = 40;
+        //             const distRatio = 1 + distance/Math.hypot(node.x, node.y, node.z);
+        //             Graph.cameraPosition(
+        //                 { x: node.x * distRatio, y: node.y * distRatio, z: node.z * distRatio }, // new position
+        //                 node, // lookAt ({ x, y, z })
+        //                 3000  // ms transition duration
+        //                 );
+        //         }
+        //     }
+
+        // })}
+        
+    </script>
+  
+      <div id="logo"> 
+        <img src="logo.png" width="700"> 
+      </div> 
+  
+      <div id="legend"> 
+        <img src="Legend.png" width="125"> 
+      </div> 
+  
+  </body>
