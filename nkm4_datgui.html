@@ -42,19 +42,31 @@
   
     <script type="module">
 
+    import {EffectComposer} from '//unpkg.com/three/examples/jsm/postprocessing/EffectComposer.js';
+    import {RenderPass} from '//unpkg.com/three/examples/jsm/postprocessing/RenderPass.js';
     import {UnrealBloomPass} from '//unpkg.com/three/examples/jsm/postprocessing/UnrealBloomPass.js';
-    import {EffectComposer} from '//unpkg.com/three/examples/js/postprocessing/EffectComposer.js';
+    //import {bloomPass} from '//unpkg.com/three/examples/jsm/postprocessing/BloomPass.js';
+
+
+    //import {EffectComposer} from '//unpkg.com/three/examples/js/postprocessing/EffectComposer.js';
+    //import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
+    // import {EffectComposer} from '//github.com/mrdoob/three.js/blob/master/examples/jsm/postprocessing/EffectComposer.js'
     // import { UnrealBloomPass } from './jsm/postprocessing/UnrealBloomPass.js';
+    // import { UnrealBloomPass } from './three/examples/js/postprocessing/UnrealBloomPass.js';
+    // import {EffectComposer} from './three/examples/js/postprocessing/EffectComposer.js';
+    //import {CopyShader} from './three/examples/js/shaders/CopyShader.js';
+    //import {RenderPass} from './three/examples/js/postprocessing/RenderPass.js';
+    // import {ShaderPass} from './three/examples/js/postprocessing/ShaderPass.js';
 
     const elem = document.getElementById('3d-graph');
       
     const Graph = ForceGraph3D()
-          .backgroundColor("#ffffff")
+          .backgroundColor("#000000")
         (elem)
           .jsonUrl('NKM4_final.json')
           .nodeLabel(node => (`<span style="color: black">${node.id}</span>`))
           .nodeThreeObject(node => colorNodes(node))
-          //.nodeAutoColorBy('group')
+          // .nodeAutoColorBy('group')
           .linkDirectionalArrowLength(8)
           .linkDirectionalArrowRelPos(1)
           .linkWidth(1)
@@ -82,7 +94,8 @@
     // bloomPass.threshold = 0.1;
     // Graph.postProcessingComposer().addPass(bloomPass);
 
-    const compose = new EffectComposer(renderer)
+
+/*     const compose = new EffectComposer(renderer)
     composer.addPass(new RenderPass(scene, camera))
     const bloomPass = new BloomPass()
     composer.addPass(bloomPass)
@@ -91,19 +104,47 @@
       // the normal renderer is being replace by composer
      // renderer.render(scene, camera); 
      composer.render();
-     requestAnimationFrame(render);
-    }
+     requestAnimationFrame(render); */
+    //}
+
+
+    var bloomPass = new UnrealBloomPass();
+      bloomPass.renderToScreen = true;
+      bloomPass.threshold = 0.1;
+      bloomPass.strength = 3;
+      bloomPass.radius = 1;
      
-     var composer = new EffectComposer( Graph.renderer());
-          var renderScene = new RenderPass(Graph.scene(), Graph.camera())
-          composer.addPass( renderScene );
-          composer.addPass( bloomPass );
-          composer.setSize(window.innerWidth, window.innerHeight)
-          Graph.renderer(()=>composer.renderer()) 
+    //var composer = new EffectComposer( Graph.renderer());
+    //var renderScene = new RenderPass(Graph.scene(), Graph.camera())
+    //composer.addPass( renderScene );
+    //composer.addPass( bloomPass );
+    //composer.setSize(window.innerWidth, window.innerHeight)
+    //Graph.renderer(()=>composer.renderer())
+    Graph.postProcessingComposer().addPass(bloomPass);
+    //Graph.postProcessingComposer().addPass(renderScene);
 
-    
+ 
 
 
+
+    // var renderScene = new RenderPass(scene, camera);
+
+    // var bloomPass = new UnrealBloomPass( new THREE.Vector2( window.innerWidth, window.innerHeight ), 1.5, 0.4, 0.85 );
+    // bloomPass.renderToScreen = true;
+    // bloomPass.threshold = 0;
+    // bloomPass.strength = 1.5;
+    // bloomPass.radius = 0;
+
+    // let composer = new EffectComposer( renderer );
+    // composer.setSize( window.innerWidth, window.innerHeight );
+    // composer.addPass( renderScene );
+    // composer.addPass( bloomPass );
+
+    // function render() {
+    //   composer.render();
+    //   requestAnimationFrame(render);
+    // }
+    // render(); 
 
     
     function colorNodes(node) {
