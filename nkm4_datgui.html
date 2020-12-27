@@ -5,7 +5,10 @@
     <script src="//unpkg.com/dat.gui"></script>
     <script src="//unpkg.com/three-spritetext"></script>
     <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script type="text/javascript" src="NKM4_final.json"></script>
+
   
     <link rel="stylesheet" href="styles.css">
 
@@ -42,37 +45,20 @@
   
     <script type="module">
 
-    import {EffectComposer} from '//unpkg.com/three/examples/jsm/postprocessing/EffectComposer.js';
-    import {RenderPass} from '//unpkg.com/three/examples/jsm/postprocessing/RenderPass.js';
-    import {UnrealBloomPass} from '//unpkg.com/three/examples/jsm/postprocessing/UnrealBloomPass.js';
-    //import {bloomPass} from '//unpkg.com/three/examples/jsm/postprocessing/BloomPass.js';
-
-
-    //import {EffectComposer} from '//unpkg.com/three/examples/js/postprocessing/EffectComposer.js';
-    //import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
-    // import {EffectComposer} from '//github.com/mrdoob/three.js/blob/master/examples/jsm/postprocessing/EffectComposer.js'
-    // import { UnrealBloomPass } from './jsm/postprocessing/UnrealBloomPass.js';
-    // import { UnrealBloomPass } from './three/examples/js/postprocessing/UnrealBloomPass.js';
-    // import {EffectComposer} from './three/examples/js/postprocessing/EffectComposer.js';
-    //import {CopyShader} from './three/examples/js/shaders/CopyShader.js';
-    //import {RenderPass} from './three/examples/js/postprocessing/RenderPass.js';
-    // import {ShaderPass} from './three/examples/js/postprocessing/ShaderPass.js';
 
     const elem = document.getElementById('3d-graph');
       
     const Graph = ForceGraph3D()
-          .backgroundColor("#000000")
+          .backgroundColor("#fff")
         (elem)
           .jsonUrl('NKM4_final.json')
           .nodeLabel(node => (`<span style="color: black">${node.id}</span>`))
           .nodeThreeObject(node => colorNodes(node))
-          // .nodeAutoColorBy('group')
           .linkDirectionalArrowLength(8)
           .linkDirectionalArrowRelPos(1)
           .linkWidth(1)
           .linkColor(() => 'rgb(0,0,0)')
           .linkOpacity(0.5)
-          // .linkAutoColorBy('group')
           .onNodeHover(node => elem.style.cursor = node ? 'pointer' : null)
           .onNodeClick(node => {
             // Aim at node from outside it
@@ -86,63 +72,9 @@
             );
           });
 
-
-    // Make the nodes glow - not working rn - https://www.gitmemory.com/issue/vasturiano/3d-force-graph/265/571380757
-    // const bloomPass = new UnrealBloomPass();
-    // bloomPass.strength = 3;
-    // bloomPass.radius = 1;
-    // bloomPass.threshold = 0.1;
-    // Graph.postProcessingComposer().addPass(bloomPass);
-
-
-/*     const compose = new EffectComposer(renderer)
-    composer.addPass(new RenderPass(scene, camera))
-    const bloomPass = new BloomPass()
-    composer.addPass(bloomPass)
-
-    function render() {
-      // the normal renderer is being replace by composer
-     // renderer.render(scene, camera); 
-     composer.render();
-     requestAnimationFrame(render); */
-    //}
-
-
-    var bloomPass = new UnrealBloomPass();
-      bloomPass.renderToScreen = true;
-      bloomPass.threshold = 0.1;
-      bloomPass.strength = 3;
-      bloomPass.radius = 1;
-
-    Graph.postProcessingComposer().addPass(bloomPass);
-
- 
-
-
-
-    // var renderScene = new RenderPass(scene, camera);
-
-    // var bloomPass = new UnrealBloomPass( new THREE.Vector2( window.innerWidth, window.innerHeight ), 1.5, 0.4, 0.85 );
-    // bloomPass.renderToScreen = true;
-    // bloomPass.threshold = 0;
-    // bloomPass.strength = 1.5;
-    // bloomPass.radius = 0;
-
-    // let composer = new EffectComposer( renderer );
-    // composer.setSize( window.innerWidth, window.innerHeight );
-    // composer.addPass( renderScene );
-    // composer.addPass( bloomPass );
-
-    // function render() {
-    //   composer.render();
-    //   requestAnimationFrame(render);
-    // }
-    // render(); 
-
     
     function colorNodes(node) {
-  
-      var obj = null;
+        //var obj = null;
       var color = "#000000"
       if (node.group == "NKM4")
         color = "#AB3428"
@@ -158,7 +90,7 @@
         color = "#B1C1C0"
       
       if (node.kd == "1")
-        obj = new THREE.Mesh(
+        var obj = new THREE.Mesh(
                 new THREE.SphereGeometry(30),
                 //new THREE.BoxGeometry(30, 30, 30),
                 //new THREE.MeshBasicMaterial({ depthWrite: true, transparent: false, opacity: 0 })
@@ -173,7 +105,7 @@
             })
               );
       else    
-        obj = new THREE.Mesh(
+        var obj = new THREE.Mesh(
                 new THREE.SphereGeometry(5),
                 //new THREE.MeshBasicMaterial({ depthWrite: true, transparent: false, opacity: 0 })
                 new THREE.MeshLambertMaterial({
@@ -187,6 +119,7 @@
             })
               );  
         return obj;
+
 
     }
 
@@ -208,12 +141,22 @@
 
     controllerSearch.onChange(updateSearch);
 
-    function updateSearch() {
 
-        Graph.nodeThreeObject(node => {
+    $.getJSON('./NKM4_final.json', function(data) {
+      //for (node in data) {
+        console.log(data)
+      //} 
+      });
+
+    console.log(data);
+
+    function updateSearch() {
+ 
+        Graph.nodeThreeObjectExtend(node => {
+          var selectedNode = settings.nodeKeys
+
             if (settings.nodeKeys == "DOK3") {
                 if (node.id == "DOK3") {
-                    colorNodes(node)
                     const distance = 40;
                     const distRatio = 1 + distance/Math.hypot(node.x, node.y, node.z);
                     Graph.cameraPosition(
@@ -224,41 +167,8 @@
                 }
             }
 
-        })}
-
-        // function lookup (node) {
-        //     Graph.nodeThreeObject(node => colorNodes(node)) 
-        //     const distance = 40;
-        //     const distRatio = 1 + distance/Math.hypot(node.x, node.y, node.z);
-        //     Graph.cameraPosition(
-        //     { x: node.x * distRatio, y: node.y * distRatio, z: node.z * distRatio }, // new position
-        //     node, // lookAt ({ x, y, z })
-        //     3000  // ms transition duration
-        //     )
-              
-        // }
-
-
-        // function updateSearch() {
-        //     Graph.nodeThreeObject(node => (settings.nodeKeys == "DOK3" && node.id == "DOK3" )              
-        //         ? lookup(node) : null)
-        //     }
-        
-        // {
-        //     if (settings.nodeKeys == "DOK3") {
-        //         if (node.id == "DOK3") {
-        //             colorNodes(node)
-        //             const distance = 40;
-        //             const distRatio = 1 + distance/Math.hypot(node.x, node.y, node.z);
-        //             Graph.cameraPosition(
-        //                 { x: node.x * distRatio, y: node.y * distRatio, z: node.z * distRatio }, // new position
-        //                 node, // lookAt ({ x, y, z })
-        //                 3000  // ms transition duration
-        //                 );
-        //         }
-        //     }
-
-        // })}
+        }) 
+      }
         
     </script>
   
