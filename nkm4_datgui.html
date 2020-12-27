@@ -134,29 +134,35 @@
     var gui = new dat.GUI();
     gui.domElement.id = 'gui';
 
-    const controllerSearch = gui.add(settings, "nodeKeys",["DOK3","WDR53"]).name("Select Node");
+    var nodeList = []
+
+    // WE NEED TO CONTINUE HERE - RN WE HAVE ALIST OF UNDEFINED
+    $.getJSON('./NKM4_final.json', function(data) {
+      //console.log(data['nodes'][0]["id"])
+      $.each(data['nodes'], function (index, item) {
+        nodeList.push(item['id'])
+      })
+    }); 
+
+    console.log("hello", JSON.stringify(nodeList))
+    //var nodeListNew = nodeList.entries()
+    //console.log(nodeListNew)
+
+  
+    const controllerSearch = gui.add(settings, "nodeKeys", nodeListNew).name("Select Node");
 
 
     var node_key = settings.nodeKeys
 
     controllerSearch.onChange(updateSearch);
 
-
-    $.getJSON('./NKM4_final.json', function(data) {
-      //for (node in data) {
-        console.log(data)
-      //} 
-      });
-
-    console.log(data);
-
+ 
     function updateSearch() {
  
         Graph.nodeThreeObjectExtend(node => {
           var selectedNode = settings.nodeKeys
-
-            if (settings.nodeKeys == "DOK3") {
-                if (node.id == "DOK3") {
+          if (selectedNode == node.id) {
+                {
                     const distance = 40;
                     const distRatio = 1 + distance/Math.hypot(node.x, node.y, node.z);
                     Graph.cameraPosition(

@@ -127,7 +127,7 @@
     const Graph = ForceGraph3D()
         .backgroundColor("#ffffff")
       (elem)
-        .jsonUrl('complete_data.json')
+        .jsonUrl('complete_data_icave_format.json')
         .nodeLabel(node => (`<span style="color: black">${node.id}</span>`))
         .nodeThreeObject(node => colorNodes(node))
         //.nodeAutoColorBy('group')
@@ -157,58 +157,63 @@
 
     var color = "#000000"
     var sphereSize = 10;
+    var multiplication_factor = 15
+    
+    node.x = node.location[0] * multiplication_factor
+    node.fx = node.location[0] * multiplication_factor
+
+    node.y = node.location[1] * multiplication_factor
+    node.fy = node.location[1] * multiplication_factor
+    
+    node.z = node.location[2] * multiplication_factor
+    node.fz = node.location[2] * multiplication_factor
+
     if (node.group == "NKM4") {
       color = "#AB3428"
-      values = getSpherePositions(0, 500, -1200, 800, 0) // lowerBound, upperBound, variance_x, variance_y, variance_z
-      node.x, node.fx = values.x 
+      //values = getSpherePositions(0, 500, -1200, 800, 0) // lowerBound, upperBound, variance_x, variance_y, variance_z
+/*       node.x, node.fx = values.x 
       node.y, node.fy = values.y
-      node.z, node.fz = values.z 
-      //node.x = -500 
-      //node.y = 500 
-      //node.fx = -500 + (Math.random() * 500)
-      //node.fy = 500 + (Math.random() * 500)
-      //node.z = 100
-      //node.fz = (Math.random() * 500)
+      node.z, node.fz = values.z  */
     }
 
     else if (node.group == "BcellM7") {
       color = "#FF8C42"   
-      values = getSpherePositions(0, 500, 0, 1200, 0)
-      node.x, node.fx = values.x 
-      node.y, node.fy = values.y
-      node.z, node.fz = values.z 
+      // values = getSpherePositions(0, 500, 0, 1200, 0)
+      // node.x, node.fx = values.x 
+      // node.y, node.fy = values.y
+      // node.z, node.fz = values.z 
     }
       
     else if (node.group == "MonoM6") {
       color = "#036D19"
-      values = getSpherePositions(0, 500, 1200, 800, 0) 
-      node.x, node.fx = values.x 
-      node.y, node.fy = values.y
-      node.z, node.fz = values.z 
+      // values = getSpherePositions(0, 500, 1200, 800, 0) 
+      // node.x, node.fx = values.x 
+      // node.y, node.fy = values.y
+      // node.z, node.fz = values.z 
     }
 
     else if (node.group == "NKM13") {
       color = "#475AFF"
-      values = getSpherePositions(0, 500, 1000, -1000, 0) 
-      node.x, node.fx = values.x 
-      node.y, node.fy = values.y
-      node.z, node.fz = values.z 
+      // values = getSpherePositions(0, 500, 1000, -1000, 0) 
+      // node.x, node.fx = values.x 
+      // node.y, node.fy = values.y
+      // node.z, node.fz = values.z 
     }
 
     else if (node.group == "NKM9") {
       color = "#2E294E"
-      values = getSpherePositions(0, 500, -1000, -1000, 0) 
-      node.x, node.fx = values.x 
-      node.y, node.fy = values.y
-      node.z, node.fz = values.z 
+      // values = getSpherePositions(0, 500, -1000, -1000, 0) 
+      // node.x, node.fx = values.x 
+      // node.y, node.fy = values.y
+      // node.z, node.fz = values.z 
       }
 
     else {
-      color = "#B1C1C0"
-      values = getSpherePositions(0, 500, 0, 0, 0)
-      node.x, node.fx = values.x 
-      node.y, node.fy = values.y
-      node.z, node.fz = values.z 
+      color = "#F0F0F0"
+      // values = getSpherePositions(0, 500, 0, 0, 0)
+      // node.x, node.fx = values.x 
+      // node.y, node.fy = values.y
+      // node.z, node.fz = values.z 
       sphereSize = 5
 
     }
@@ -226,8 +231,8 @@
     || node.id =="TUBB1")
     {
       sphereSize = 100;
-      node.z = 100;
-      node.fz = 100;
+      //node.z = 100;
+      //node.fz = 100;
       
 
     }
