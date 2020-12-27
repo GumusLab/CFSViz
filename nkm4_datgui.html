@@ -113,15 +113,8 @@
       bloomPass.threshold = 0.1;
       bloomPass.strength = 3;
       bloomPass.radius = 1;
-     
-    //var composer = new EffectComposer( Graph.renderer());
-    //var renderScene = new RenderPass(Graph.scene(), Graph.camera())
-    //composer.addPass( renderScene );
-    //composer.addPass( bloomPass );
-    //composer.setSize(window.innerWidth, window.innerHeight)
-    //Graph.renderer(()=>composer.renderer())
+
     Graph.postProcessingComposer().addPass(bloomPass);
-    //Graph.postProcessingComposer().addPass(renderScene);
 
  
 
