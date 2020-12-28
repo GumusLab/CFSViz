@@ -6,6 +6,7 @@
     <script src="//unpkg.com/three-spritetext"></script>
     <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
 
     <script type="text/javascript" src="NKM4_final.json"></script>
 
@@ -136,20 +137,69 @@
 
     var nodeList = []
 
-    // WE NEED TO CONTINUE HERE - RN WE HAVE ALIST OF UNDEFINED
-    $.getJSON('./NKM4_final.json', function(data) {
+    //var tData = JSON.parse(".NKM4_final.json"); 
+    //console.log('irene test', tData);
+
+
+//     function loadJSON(callback) {   
+//       var xobj = new XMLHttpRequest();
+//       xobj.overrideMimeType("application/json");
+//       xobj.open('GET', './NKM4_final.json', true);
+//       xobj.onreadystatechange = function () {
+//         if (xobj.readyState == 4 && xobj.status == "200") {
+//           callback(JSON.parse(xobj.responseText));
+//         }
+//       };
+//       xobj.send(null);  
+// }
+
+//       nodeList = loadJSON(function(json) {
+//         console.log(json); // this will log out the json object
+
+//         console.log(json['nodes'][0])
+
+//       });
+
+      $.ajax ({ 
+        url: './NKM4_final.json', 
+        method: "GET"}) 
+      .success(function (response) { 
+        var json = $.parseJSON (response); 
+      }); 
+
+      console.log('here', json);
+
+
+
+ /*     $.getJSON('./NKM4_final.json', function(data) {
       //console.log(data['nodes'][0]["id"])
       $.each(data['nodes'], function (index, item) {
+        //console.log(typeof(item['id']))
+        //console.log(item["id"])
         nodeList.push(item['id'])
       })
+
+      console.log('irene', typeof(nodeList[0]))
+      console.log(nodeList.keys())
+      console.log(nodeList.values())
+      console.log(nodeList.entries())
+
     }); 
 
-    console.log("hello", JSON.stringify(nodeList))
+
+    console.log('shreya', typeof(nodeList[0]))
+      console.log(nodeList.keys())
+      console.log(nodeList.values())
+      console.log(nodeList.entries())
+
+
+
+    console.log("hello", JSON.stringify(nodeList)) */
     //var nodeListNew = nodeList.entries()
     //console.log(nodeListNew)
 
   
-    const controllerSearch = gui.add(settings, "nodeKeys", nodeListNew).name("Select Node");
+    const controllerSearch = gui.add(settings, "nodeKeys", nodeList).name("Select Node");
 
 
     var node_key = settings.nodeKeys
