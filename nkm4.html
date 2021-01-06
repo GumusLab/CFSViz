@@ -1,16 +1,25 @@
 <head>
   <style> body { margin: 0; } 
+
+
+.button2 {
+    background-color: #AB3428;
+    color: white;
+    outline: 3px solid black;
+  }
   </style>
 
   <script src="//unpkg.com/3d-force-graph"></script>
   <script src="//unpkg.com/three"></script>
   <link rel="stylesheet" href="styles.css">
+  <script src="//unpkg.com/dat.gui"></script>
 
   <!--<script src="../../dist/3d-force-graph.js"></script>-->
 </head>
 
 <body>
-
+      
+  
   <div id="3d-graph"></div>
 
   <div style="position: absolute; top: 150px; left: 5px;">
@@ -32,40 +41,25 @@
     <button class="btn button6" id="module5" onclick="window.location.href = 'nkm9.html'">
       NKM9
     </button>
-
-
-    <!-- https://bl.ocks.org/cornhundred/1b9404efc32d6b135fab -->
-
-    <div id='gene_search_container' class='row'>
-      <input id='gene_search_box' type="text" class="form-control" placeholder="Input Gene">
-
-      <div id='gene_search_button' class="btn-group"  >
-        <label id='gene_search_submit' class="btn btn-primary active ">
-          <input type="radio"> Search
-        </label>
-      </div>
-    </div>
-
-    
     
   </div>
 
-  <script>
-    const elem = document.getElementById('3d-graph');
 
-    const Graph = ForceGraph3D()
-        .backgroundColor("#ffffff")
+  <script type="module">
+
+  const elem = document.getElementById('3d-graph');
+    
+  const Graph = ForceGraph3D()
+        .backgroundColor("#fff")
       (elem)
         .jsonUrl('NKM4_final.json')
         .nodeLabel(node => (`<span style="color: black">${node.id}</span>`))
         .nodeThreeObject(node => colorNodes(node))
-        //.nodeAutoColorBy('group')
         .linkDirectionalArrowLength(8)
         .linkDirectionalArrowRelPos(1)
         .linkWidth(1)
         .linkColor(() => 'rgb(0,0,0)')
         .linkOpacity(0.5)
-        //.linkAutoColorBy('group')
         .onNodeHover(node => elem.style.cursor = node ? 'pointer' : null)
         .onNodeClick(node => {
           // Aim at node from outside it
@@ -79,9 +73,9 @@
           );
         });
 
-
+  
   function colorNodes(node) {
-
+      //var obj = null;
     var color = "#000000"
     if (node.group == "NKM4")
       color = "#AB3428"
@@ -97,7 +91,7 @@
       color = "#B1C1C0"
     
     if (node.kd == "1")
-      obj = new THREE.Mesh(
+      var obj = new THREE.Mesh(
               new THREE.SphereGeometry(30),
               //new THREE.BoxGeometry(30, 30, 30),
               //new THREE.MeshBasicMaterial({ depthWrite: true, transparent: false, opacity: 0 })
@@ -112,7 +106,7 @@
           })
             );
     else    
-      obj = new THREE.Mesh(
+      var obj = new THREE.Mesh(
               new THREE.SphereGeometry(5),
               //new THREE.MeshBasicMaterial({ depthWrite: true, transparent: false, opacity: 0 })
               new THREE.MeshLambertMaterial({
@@ -124,13 +118,152 @@
             color: color //FFAE03
             //vertexColors: THREE.FaceColors,
           })
-            );
-    
-
-    
-
+            );  
       return obj;
   }
+
+  const Settings = function() {
+    this.nodeKeys = "";
+    };
+  
+  const settings = new Settings();
+  // const gui = new dat.GUI();
+
+  var gui = new dat.GUI();
+  gui.domElement.id = 'gui';
+
+/*      $.getJSON('./NKM4_final.json', function(data) {
+    console.log(data['nodes'][0]["id"])
+    $.each(data['nodes'], function (index, item) {
+      console.log(typeof(item['id']))
+      console.log(item["id"])
+      nodeList.push(item['id'])
+    })
+
+  console.log("hello", JSON.stringify(nodeList)) 
+  var nodeListNew = nodeList.entries()
+  console.log(nodeListNew) */
+
+  var nodeList = ['ALG2',
+'CLP1',
+'DBNDD2',
+'RGCC',
+'PTGER4',
+'PABPC4',
+'PER1',
+'EIF1',
+'HSPA5',
+'TAF13',
+'FAM46C',
+'TTC9C',
+'RIPK1',
+'FOS',
+'ZNF674-AS1',
+'TNFAIP3',
+'PMAIP1',
+'MIR22HG',
+'RGS2',
+'LARP4B',
+'MTERFD2',
+'SERTAD3',
+'WDR53',
+'TOE1',
+'AC058791.2',
+'RNMTL1',
+'TSPYL2',
+'ARL4A',
+'CD83',
+'BHLHE40',
+'FAM177A1',
+'SPRY1',
+'IRF1',
+'MOAP1',
+'EIF1AD',
+'EGR2',
+'SYS1',
+'BNIP1',
+'YRDC',
+'SRSF7',
+'ZNF259',
+'KPNA2',
+'KANSL2',
+'DHRS1',
+'CSRNP1',
+'ZFP36',
+'B3GNT7',
+'TNF',
+'IRS2',
+'TRAF4',
+'OTUD1',
+'LRRC59',
+'AP006216.11',
+'ZNF394',
+'AVPI1',
+'GRASP',
+'SPATA2',
+'CXCR4',
+'CYTIP',
+'AC005229.1',
+'JUN',
+'PIM3',
+'DUSP10',
+'PPP1R15A',
+'C20orf111',
+'PDE4B',
+'NR4A2',
+'DUSP5',
+'SLAMF8',
+'ATF3',
+'DUSP1',
+'SLC5A6',
+'RP4-800J21.3',
+'ZC3H12A',
+'BTG2',
+'TSPYL1',
+'SIK1',
+'TP53INP2',
+'SPAG4',
+'SBDS',
+'MAP3K8',
+'GRPEL1',
+'JMJD6',
+'DDIT3',
+'MYLIP',
+'SERTAD1',
+'GADD45A',
+'ISG20L2',
+'MAFF',
+'CTB-31O20.2',
+'YPEL5',
+'DNAJB1']
+
+
+  const controllerSearch = gui.add(settings, "nodeKeys", nodeList).name("Select Node");
+
+  var node_key = settings.nodeKeys
+
+  controllerSearch.onChange(updateSearch);
+
+
+  function updateSearch() {
+
+      Graph.nodeThreeObjectExtend(node => {
+        var selectedNode = settings.nodeKeys
+        if (selectedNode == node.id) {
+              {
+                  const distance = 40;
+                  const distRatio = 1 + distance/Math.hypot(node.x, node.y, node.z);
+                  Graph.cameraPosition(
+                      { x: node.x * distRatio, y: node.y * distRatio, z: node.z * distRatio }, // new position
+                      node, // lookAt ({ x, y, z })
+                      3000  // ms transition duration
+                      );
+              }
+          }
+
+      }) 
+    }
+      
   </script>
 
     <div id="logo"> 

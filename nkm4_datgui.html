@@ -6,14 +6,10 @@
     <script src="//unpkg.com/three-spritetext"></script>
     <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    
-
+    <script src="http://requirejs.org/docs/release/2.1.5/comments/require.js"></script>
     <script type="text/javascript" src="NKM4_final.json"></script>
-
-  
     <link rel="stylesheet" href="styles.css">
 
-    <!--<script src="../../dist/3d-force-graph.js"></script>-->
   </head>
   
   <body>
@@ -45,7 +41,6 @@
 
   
     <script type="module">
-
 
     const elem = document.getElementById('3d-graph');
       
@@ -120,10 +115,7 @@
             })
               );  
         return obj;
-
-
     }
-
 
     const Settings = function() {
       this.nodeKeys = "";
@@ -135,72 +127,113 @@
     var gui = new dat.GUI();
     gui.domElement.id = 'gui';
 
-    var nodeList = []
-
-    //var tData = JSON.parse(".NKM4_final.json"); 
-    //console.log('irene test', tData);
-
-
-//     function loadJSON(callback) {   
-//       var xobj = new XMLHttpRequest();
-//       xobj.overrideMimeType("application/json");
-//       xobj.open('GET', './NKM4_final.json', true);
-//       xobj.onreadystatechange = function () {
-//         if (xobj.readyState == 4 && xobj.status == "200") {
-//           callback(JSON.parse(xobj.responseText));
-//         }
-//       };
-//       xobj.send(null);  
-// }
-
-//       nodeList = loadJSON(function(json) {
-//         console.log(json); // this will log out the json object
-
-//         console.log(json['nodes'][0])
-
-//       });
-
-      $.ajax ({ 
-        url: './NKM4_final.json', 
-        method: "GET"}) 
-      .success(function (response) { 
-        var json = $.parseJSON (response); 
-      }); 
-
-      console.log('here', json);
-
-
-
- /*     $.getJSON('./NKM4_final.json', function(data) {
-      //console.log(data['nodes'][0]["id"])
+/*      $.getJSON('./NKM4_final.json', function(data) {
+      console.log(data['nodes'][0]["id"])
       $.each(data['nodes'], function (index, item) {
-        //console.log(typeof(item['id']))
-        //console.log(item["id"])
+        console.log(typeof(item['id']))
+        console.log(item["id"])
         nodeList.push(item['id'])
       })
 
-      console.log('irene', typeof(nodeList[0]))
-      console.log(nodeList.keys())
-      console.log(nodeList.values())
-      console.log(nodeList.entries())
+    console.log("hello", JSON.stringify(nodeList)) 
+    var nodeListNew = nodeList.entries()
+    console.log(nodeListNew) */
 
-    }); 
+    var nodeList = ['ALG2',
+ 'CLP1',
+ 'DBNDD2',
+ 'RGCC',
+ 'PTGER4',
+ 'PABPC4',
+ 'PER1',
+ 'EIF1',
+ 'HSPA5',
+ 'TAF13',
+ 'FAM46C',
+ 'TTC9C',
+ 'RIPK1',
+ 'FOS',
+ 'ZNF674-AS1',
+ 'TNFAIP3',
+ 'PMAIP1',
+ 'MIR22HG',
+ 'RGS2',
+ 'LARP4B',
+ 'MTERFD2',
+ 'SERTAD3',
+ 'WDR53',
+ 'TOE1',
+ 'AC058791.2',
+ 'RNMTL1',
+ 'TSPYL2',
+ 'ARL4A',
+ 'CD83',
+ 'BHLHE40',
+ 'FAM177A1',
+ 'SPRY1',
+ 'IRF1',
+ 'MOAP1',
+ 'EIF1AD',
+ 'EGR2',
+ 'SYS1',
+ 'BNIP1',
+ 'YRDC',
+ 'SRSF7',
+ 'ZNF259',
+ 'KPNA2',
+ 'KANSL2',
+ 'DHRS1',
+ 'CSRNP1',
+ 'ZFP36',
+ 'B3GNT7',
+ 'TNF',
+ 'IRS2',
+ 'TRAF4',
+ 'OTUD1',
+ 'LRRC59',
+ 'AP006216.11',
+ 'ZNF394',
+ 'AVPI1',
+ 'GRASP',
+ 'SPATA2',
+ 'CXCR4',
+ 'CYTIP',
+ 'AC005229.1',
+ 'JUN',
+ 'PIM3',
+ 'DUSP10',
+ 'PPP1R15A',
+ 'C20orf111',
+ 'PDE4B',
+ 'NR4A2',
+ 'DUSP5',
+ 'SLAMF8',
+ 'ATF3',
+ 'DUSP1',
+ 'SLC5A6',
+ 'RP4-800J21.3',
+ 'ZC3H12A',
+ 'BTG2',
+ 'TSPYL1',
+ 'SIK1',
+ 'TP53INP2',
+ 'SPAG4',
+ 'SBDS',
+ 'MAP3K8',
+ 'GRPEL1',
+ 'JMJD6',
+ 'DDIT3',
+ 'MYLIP',
+ 'SERTAD1',
+ 'GADD45A',
+ 'ISG20L2',
+ 'MAFF',
+ 'CTB-31O20.2',
+ 'YPEL5',
+ 'DNAJB1']
 
 
-    console.log('shreya', typeof(nodeList[0]))
-      console.log(nodeList.keys())
-      console.log(nodeList.values())
-      console.log(nodeList.entries())
-
-
-
-    console.log("hello", JSON.stringify(nodeList)) */
-    //var nodeListNew = nodeList.entries()
-    //console.log(nodeListNew)
-
-  
     const controllerSearch = gui.add(settings, "nodeKeys", nodeList).name("Select Node");
-
 
     var node_key = settings.nodeKeys
 

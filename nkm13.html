@@ -1,105 +1,29 @@
-<head>
-  <style> body { margin: 0; } 
-  .btn
-  {
-    background-color: white;
-    border: 3px solid black;
-    margin: 8px;
-    height: 30px; 
-    width: 120px;
-    transition: 0.3s;
-  }
-
-  button {
-    display: block
-  }
-
-  #logo{ 
-	position:fixed; 
-	top:15; 
-	left:0; 
-  } 
-
-  #legend{
-    position: fixed;
-    top: 420;
-    left:17;
-  }
-
-  .button1{
-    background-color: #B1C1C0;
-    color: white; 
-  } 
-
-  .button2 {
-    background-color: #AB3428;
-    color: white;
-  }
-
-  .button3 {
-    background-color: #FF8C42;
-    color: white;
-  }
-
-  .button4 {
-    background-color: #036D19;
-    color: white;
-  }
-
-  .button5 {
-    background-color: #475AFF;
-    color: white;
-    outline: 3px solid black;
-  }
-
-  .button6 {
-    background-color: #2E294E;
-    color: white;
-  }
-
-  .button1:hover {
-    background-color: #e1e1e1;
-    color: black; 
-  } 
-
-  .button2:hover {
-    background-color: #ca675e;
-    color: white;
-  }
-
-  .button3:hover {
-    background-color: #e6a882;
-    color: white;
-  }
-
-  .button4:hover {
-    background-color: #529f61;
-    color: white;
-  }
-
-  .button5:hover {
-    background-color: #8890dc;
-    color: white;
-  }
-
-  .button6:hover {
-    background-color: #7067a7;
-    color: white;
-  }
-
-  #allnodes {
-    font-weight: bold;
-  }
-  </style>
-
-
+<head>  
+  
   <script src="//unpkg.com/3d-force-graph"></script>
   <script src="//unpkg.com/three"></script>
+  <script src="//unpkg.com/dat.gui"></script>
+  <script src="//unpkg.com/three-spritetext"></script>
+  <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="http://requirejs.org/docs/release/2.1.5/comments/require.js"></script>
+  <script type="text/javascript" src="NKM4_final.json"></script>
+  <link rel="stylesheet" href="styles.css">
 
-  <!--<script src="../../dist/3d-force-graph.js"></script>-->
+  <style> body { margin: 0; } 
+
+
+    .button5 {
+        background-color: #475AFF;
+        color: white;
+        outline: 3px solid black;
+      }
+      </style>
+
 </head>
 
 <body>
+    
 
   <div id="3d-graph"></div>
 
@@ -125,22 +49,22 @@
     
   </div>
 
-  <script>
-    const elem = document.getElementById('3d-graph');
 
-    const Graph = ForceGraph3D()
-        .backgroundColor("#ffffff")
+  <script type="module">
+
+  const elem = document.getElementById('3d-graph');
+    
+  const Graph = ForceGraph3D()
+        .backgroundColor("#fff")
       (elem)
         .jsonUrl('NKM13_final.json')
         .nodeLabel(node => (`<span style="color: black">${node.id}</span>`))
         .nodeThreeObject(node => colorNodes(node))
-        //.nodeAutoColorBy('group')
         .linkDirectionalArrowLength(8)
         .linkDirectionalArrowRelPos(1)
         .linkWidth(1)
         .linkColor(() => 'rgb(0,0,0)')
         .linkOpacity(0.5)
-        //.linkAutoColorBy('group')
         .onNodeHover(node => elem.style.cursor = node ? 'pointer' : null)
         .onNodeClick(node => {
           // Aim at node from outside it
@@ -154,9 +78,9 @@
           );
         });
 
-
+  
   function colorNodes(node) {
-
+      //var obj = null;
     var color = "#000000"
     if (node.group == "NKM4")
       color = "#AB3428"
@@ -172,7 +96,7 @@
       color = "#B1C1C0"
     
     if (node.kd == "1")
-      obj = new THREE.Mesh(
+      var obj = new THREE.Mesh(
               new THREE.SphereGeometry(30),
               //new THREE.BoxGeometry(30, 30, 30),
               //new THREE.MeshBasicMaterial({ depthWrite: true, transparent: false, opacity: 0 })
@@ -187,7 +111,7 @@
           })
             );
     else    
-      obj = new THREE.Mesh(
+      var obj = new THREE.Mesh(
               new THREE.SphereGeometry(5),
               //new THREE.MeshBasicMaterial({ depthWrite: true, transparent: false, opacity: 0 })
               new THREE.MeshLambertMaterial({
@@ -199,21 +123,270 @@
             color: color //FFAE03
             //vertexColors: THREE.FaceColors,
           })
-            );
-    
-
-    
-
+            );  
       return obj;
   }
+
+  const Settings = function() {
+    this.nodeKeys = "";
+    };
+  
+  const settings = new Settings();
+  // const gui = new dat.GUI();
+
+  var gui = new dat.GUI();
+  gui.domElement.id = 'gui';
+
+/*      $.getJSON('./NKM4_final.json', function(data) {
+    console.log(data['nodes'][0]["id"])
+    $.each(data['nodes'], function (index, item) {
+      console.log(typeof(item['id']))
+      console.log(item["id"])
+      nodeList.push(item['id'])
+    })
+
+  console.log("hello", JSON.stringify(nodeList)) 
+  var nodeListNew = nodeList.entries()
+  console.log(nodeListNew) */
+
+  var nodeList = ['GP1BA',
+ 'LGALSL',
+ 'RPL23AP7',
+ 'SCFD2',
+ 'RGS18',
+ 'TJP2',
+ 'PPBP',
+ 'GNG11',
+ 'RP13-270P17.2',
+ 'C21orf7',
+ 'ELOVL7',
+ 'C12orf76',
+ 'SMIM5',
+ 'AC091814.3',
+ 'ADIPOR1',
+ 'MAX',
+ 'ITGB5',
+ 'C7orf41',
+ 'LIMS1',
+ 'AGBL5',
+ 'GAS2L1',
+ 'ITGB3',
+ 'RUFY1',
+ 'C5orf4',
+ 'RP11-4O1.2',
+ 'RP3-370M22.8',
+ 'SMOX',
+ 'AP001189.4',
+ 'MLH3',
+ 'WNT3',
+ 'NUGGC',
+ 'APP',
+ 'CDK2AP1',
+ 'ARG2',
+ 'CLU',
+ 'TSPAN13',
+ 'SLC40A1',
+ 'HIST1H2BJ',
+ 'PEAR1',
+ 'ENKUR',
+ 'MCTP1',
+ 'SRC',
+ 'CDKN1A',
+ 'J01415.23',
+ 'GP9',
+ 'VWF',
+ 'BMP6',
+ 'PDGFB',
+ 'SNCA',
+ 'TRIM58',
+ 'CD36',
+ 'RP1-90J20.7',
+ 'EHD3',
+ 'PHGDH',
+ 'R3HDM4',
+ 'PGRMC1',
+ 'DAPP1',
+ 'SELP',
+ 'PF4',
+ 'C7orf53',
+ 'MARCHF2',
+ 'F13A1',
+ 'U66061.31',
+ 'XK',
+ 'HEMGN',
+ 'RP11-234K19.2',
+ 'TPTEP1',
+ 'LHFPL2',
+ 'EPB49',
+ 'TUBB6',
+ 'HIST1H2BK',
+ 'HGD',
+ 'CDC42BPB',
+ 'C2orf88',
+ 'RP11-501J20.5',
+ 'ACTR3B',
+ 'MIR4485',
+ 'ESAM',
+ 'RAB6B',
+ 'RP11-64K12.2',
+ 'FHL2',
+ 'RTN2',
+ 'MFSD2B',
+ 'AIG1',
+ 'PDLIM1',
+ 'CMTM5',
+ 'JAM3',
+ 'C1orf198',
+ 'PLA2G12A',
+ 'MAP1A',
+ 'CCDC90A',
+ 'MMD',
+ 'CXCL5',
+ 'RGS10',
+ 'HIST1H3H',
+ 'GNB5',
+ 'CTDSPL',
+ 'RHOBTB1',
+ 'MYL9',
+ 'HIST1H2BD',
+ 'HIST1H4H',
+ 'GNAZ',
+ 'CLMN',
+ 'NPL',
+ 'MYO1C',
+ 'ALOX12',
+ 'DENND2C',
+ 'PBX1',
+ 'C1RL',
+ 'ABLIM3',
+ 'TREML1',
+ 'COL6A3',
+ 'LOH12CR1',
+ 'SNN',
+ 'EPOR',
+ 'GMPR',
+ 'TSPAN18',
+ 'AFAP1L2',
+ 'TSPAN33',
+ 'TMCC2',
+ 'NT5C3',
+ 'DCTN5',
+ 'BANK1',
+ 'SCN1B',
+ 'MYLK',
+ 'GPX1',
+ 'TMEM40',
+ 'GNAS',
+ 'PARVB',
+ 'CTTN',
+ 'SH3BGRL2',
+ 'PTCRA',
+ 'SPARC',
+ 'TLR5',
+ 'PCSK6',
+ 'PRKAR1B',
+ 'ACRBP',
+ 'LTBP1',
+ 'FRMD3',
+ 'CLEC1B',
+ 'RP11-356I2.4',
+ 'TSPAN9',
+ 'CXCR2P1',
+ 'MPP1',
+ 'PLXDC1',
+ 'MFAP3L',
+ 'TMEM55A',
+ 'GGTA1P',
+ 'ST3GAL3',
+ 'HIST1H2AC',
+ 'MFSD1',
+ 'ACVR1',
+ 'NEXN',
+ 'GUCY1B3',
+ 'HIST1H2AG',
+ 'ZNF367',
+ 'FHL1',
+ 'DNM3',
+ 'BEND2',
+ 'NGFRAP1',
+ 'MEIS1',
+ 'TTC7B',
+ 'CD300LB',
+ 'LAPTM4B',
+ 'PTGS1',
+ 'HIST2H2BE',
+ 'TAGLN2',
+ 'MSANTD3',
+ 'CTNNAL1',
+ 'SAMD14',
+ 'GFI1B',
+ 'NT5M',
+ 'GRAP2',
+ 'PKIG',
+ 'IRF8',
+ 'DSE',
+ 'PRKAR2B',
+ 'MGLL',
+ 'GRHL1',
+ 'ACTN1',
+ 'ZNF185',
+ 'ABCC3',
+ 'CPNE5',
+ 'OSBP2',
+ 'CYP2R1',
+ 'RP11-678G14.3',
+ 'SEPTIN5',
+ 'NRGN',
+ 'ITGA2B',
+ 'AC093818.1',
+ 'CTSA',
+ 'AC078883.3',
+ 'AP003068.23',
+ 'SDPR',
+ 'NCK2',
+ 'TUBB1',
+ 'CA2',
+ 'ARHGAP6',
+ 'C6orf25',
+ 'ANK1',
+ 'TNFSF4',
+ 'PTK2']
+
+
+  const controllerSearch = gui.add(settings, "nodeKeys", nodeList).name("Select Node");
+
+  var node_key = settings.nodeKeys
+
+  controllerSearch.onChange(updateSearch);
+
+
+  function updateSearch() {
+
+      Graph.nodeThreeObjectExtend(node => {
+        var selectedNode = settings.nodeKeys
+        if (selectedNode == node.id) {
+              {
+                  const distance = 40;
+                  const distRatio = 1 + distance/Math.hypot(node.x, node.y, node.z);
+                  Graph.cameraPosition(
+                      { x: node.x * distRatio, y: node.y * distRatio, z: node.z * distRatio }, // new position
+                      node, // lookAt ({ x, y, z })
+                      3000  // ms transition duration
+                      );
+              }
+          }
+
+      }) 
+    }
+      
   </script>
 
-<div id="logo"> 
-	<img src="logo.png" width="700"> 
-</div> 
+    <div id="logo"> 
+      <img src="logo.png" width="700"> 
+    </div> 
 
-<div id="legend"> 
-  <img src="Legend.png" width="125"> 
-</div> 
+    <div id="legend"> 
+      <img src="Legend.png" width="125"> 
+    </div> 
 
 </body>

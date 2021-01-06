@@ -38,8 +38,8 @@
 }
 .btn
   {
-    background-color: white;
     border: 3px solid black;
+    background-color: white;
     margin: 8px;
     height: 30px; 
     width: 120px;
@@ -65,12 +65,12 @@
   .button1{
     background-color: #B1C1C0;
     color: white; 
-  } 
-
+  }
+  
+  
   .button2 {
     background-color: #AB3428;
     color: white;
-    outline: 3px solid black;
   }
 
   .button3 {
@@ -95,7 +95,7 @@
 
   .button1:hover {
     background-color: #e1e1e1;
-    color: black; 
+    color: white; 
   } 
 
   .button2:hover {
