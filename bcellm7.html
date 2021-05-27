@@ -921,9 +921,10 @@
  'NID1',
  'ITGB5',
  'FGL2']
-
-
-  const controllerSearch = gui.add(settings, "nodeKeys", nodeList).name("Select Node");
+  var sortedNodeList = nodeList.sort()
+//  const controllerSearch = gui.add(settings,"nodeKeys",nodesList.sort()).name("Select Node");
+  console.log(sortedNodeList)
+  const controllerSearch = gui.add(settings, "nodeKeys", sortedNodeList).name("Select Node");
 
   var node_key = settings.nodeKeys
 
