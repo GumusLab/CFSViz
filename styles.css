@@ -41,25 +41,58 @@
     border: 3px solid black;
     background-color: white;
     margin: 8px;
-    height: 30px; 
-    width: 120px;
+    height: 35px;
+    width: 140px;
     transition: 0.3s;
+    padding: 0.5px;
   }
 
   button {
-    display: block
+    display: block;
   }
 
   #logo{ 
-	position:fixed; 
-	top:15; 
-	left:0; 
-  } 
+    position:fixed; 
+    top:0; 
+    left:0; 
+} 
+
+.modal-body {
+    overflow-x: auto;
+    max-width: 98%; 
+}
+
+.close_button {
+    color: black; 
+    vertical-align: middle;
+    text-align:center;
+}
+
+
+.modal-dialog {
+    position: fixed;
+    height: 100%;
+    width: 40%;
+    right: 0px;
+    bottom: -30px;
+}
+.modal-content {
+    height: 100%;
+}
+
+.modal-backdrop {
+    display: none;
+}
+
+.modal {
+    pointer-events: none;
+}
 
   #legend{
-    position: fixed;
-    top: 420;
-    left:17;
+    position: absolute; 
+    left:10px; 
+    bottom: 10%;
+    z-index: 1030;
   }
 
   .button1{
@@ -125,18 +158,22 @@
 
   #allnodes {
     font-weight: bold;
-<<<<<<< HEAD
   }
-
 
 
   #gui {
-    position: absolute;
-      left: 2px;   /* position inside relatively positioned parent */
-    top: 400px;
-      z-index: 10;   /* adjust as needed */
+    /*position: absolute;*/
+    /*left: 2px;*/   /* position inside relatively positioned parent */
+    /*top: 500px;*/
+    /*z-index: 10;*/   /* adjust as needed */
   }
-  
+
+  #gui_container{
+    position: absolute;
+    top: 57%;
+    left: 8px; 
+  }
+
   /*
   span.property-name{
       background-color: midnightblue;
@@ -426,7 +463,7 @@
   
   .dg {
       color: #eee;
-      font: 9px Arial;
+      font: 12px Arial;
       text-shadow: 0 -1px 0 #111
   }
   
@@ -566,6 +603,3 @@
       background: #44abda
   }
   
-=======
-  }
->>>>>>> 97013cb239b26c182b375ef5f7f253fda318d2bb
