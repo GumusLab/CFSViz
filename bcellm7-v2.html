@@ -358,6 +358,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
   <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.css">
   <link rel="stylesheet" href="styles.css">
+  <script src="//unpkg.com/three-spritetext"></script>
 
 </head>
 <body>
@@ -458,8 +459,15 @@
             transparent: false,
             opacity: 1,
             wireframe: false,
-            color: color
-          }));  
+            //emissive: "#181818",
+            color: color //FFAE03
+            //vertexColors: THREE.FaceColors,
+          })
+            ); 
+      const sprite = new SpriteText(node.id);
+      sprite.color = 'rgb(100,100,100)';
+      sprite.textHeight = 6;
+      obj.add(sprite); 
       return obj;
   }
 
@@ -1250,8 +1258,10 @@
  'ITGB5',
  'FGL2']
 
-
-  const controllerSearch = gui.add(settings, "nodeKeys", nodeList).name("Select Node");
+  var sortedNodeList = nodeList.sort()
+//  const controllerSearch = gui.add(settings,"nodeKeys",nodesList.sort()).name("Select Node");
+  console.log(sortedNodeList)
+  const controllerSearch = gui.add(settings, "nodeKeys", sortedNodeList).name("Select Node");
 
   var node_key = settings.nodeKeys
 
