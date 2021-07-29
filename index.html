@@ -53,7 +53,7 @@
     const Graph = ForceGraph3D()
         .backgroundColor("#fff")
       (elem)
-        .jsonUrl('/data/final_data/complete_data_icave_format.json')
+        .jsonUrl('complete_data_icave_format.json')
         .nodeLabel(node => (`<span style="color: black">${node.id}</span>`))
         .nodeThreeObject(node => colorNodes(node))
         .nodeResolution(3)
