@@ -1,54 +1,407 @@
-<head>  
+<!doctype html>
+<html lang="en">
+<head>
+  <style> 
+    body { margin: 0; } 
+
+    .button5 {
+      outline: 5px solid black !important;
+    }
+  </style>
+  <style id="NKM13_17278_Styles">
+  <!--table
+    {mso-displayed-decimal-separator:"\.";
+    mso-displayed-thousand-separator:"\,";}
+  @page
+    {margin:.75in .7in .75in .7in;
+    mso-header-margin:.3in;
+    mso-footer-margin:.3in;}
+  tr
+    {mso-height-source:auto;}
+  col
+    {mso-width-source:auto;}
+  br
+    {mso-data-placement:same-cell;}
+  .style0
+    {mso-number-format:General;
+    text-align:general;
+    vertical-align:bottom;
+    white-space:nowrap;
+    mso-rotate:0;
+    mso-background-source:auto;
+    mso-pattern:auto;
+    color:black;
+    font-size:12.0pt;
+    font-weight:400;
+    font-style:normal;
+    text-decoration:none;
+    font-family:Calibri, sans-serif;
+    mso-font-charset:0;
+    border:none;
+    mso-protection:locked visible;
+    mso-style-name:Normal;
+    mso-style-id:0;}
+  td
+    {mso-style-parent:style0;
+    padding-top:1px;
+    padding-right:1px;
+    padding-left:1px;
+    mso-ignore:padding;
+    color:black;
+    font-size:12.0pt;
+    font-weight:400;
+    font-style:normal;
+    text-decoration:none;
+    font-family:Calibri, sans-serif;
+    mso-font-charset:0;
+    mso-number-format:General;
+    text-align:general;
+    vertical-align:bottom;
+    border:none;
+    mso-background-source:auto;
+    mso-pattern:auto;
+    mso-protection:locked visible;
+    white-space:nowrap;
+    mso-rotate:0;}
+  .xl66
+    {mso-style-parent:style0;
+    vertical-align:middle;
+    white-space:normal;}
+  .xl67
+    {mso-style-parent:style0;
+    color:white;
+    font-size:16.0pt;
+    font-weight:700;
+    text-align:center;
+    vertical-align:middle;
+    border:.5pt solid windowtext;
+    background:black;
+    mso-pattern:black none;
+    white-space:normal;}
+  .xl68
+    {mso-style-parent:style0;
+    font-size:10.0pt;
+    font-style:italic;
+    vertical-align:middle;
+    border-top:.5pt solid windowtext;
+    border-right:.5pt solid windowtext;
+    border-bottom:none;
+    border-left:.5pt solid windowtext;
+    white-space:normal;}
+  .xl69
+    {mso-style-parent:style0;
+    font-size:10.0pt;
+    font-style:italic;
+    vertical-align:middle;
+    border-top:.5pt solid windowtext;
+    border-right:.5pt solid windowtext;
+    border-bottom:none;
+    border-left:none;
+    white-space:normal;}
+  .xl70
+    {mso-style-parent:style0;
+    font-size:10.0pt;
+    font-style:italic;
+    vertical-align:middle;
+    border-top:none;
+    border-right:.5pt solid windowtext;
+    border-bottom:none;
+    border-left:none;
+    white-space:normal;}
+  .xl71
+    {mso-style-parent:style0;
+    font-size:10.0pt;
+    font-style:italic;
+    mso-number-format:"0\.000";
+    vertical-align:middle;
+    border-top:.5pt solid windowtext;
+    border-right:.5pt solid windowtext;
+    border-bottom:none;
+    border-left:none;
+    white-space:normal;}
+  .xl72
+    {mso-style-parent:style0;
+    font-size:10.0pt;
+    font-style:italic;
+    mso-number-format:Scientific;
+    vertical-align:middle;
+    border-top:.5pt solid windowtext;
+    border-right:.5pt solid windowtext;
+    border-bottom:none;
+    border-left:none;
+    white-space:normal;}
+  .xl73
+    {mso-style-parent:style0;
+    font-size:10.0pt;
+    font-weight:700;
+    vertical-align:middle;
+    border-top:1.0pt solid windowtext;
+    border-right:.5pt solid windowtext;
+    border-bottom:1.0pt solid windowtext;
+    border-left:1.0pt solid windowtext;
+    white-space:normal;}
+  .xl74
+    {mso-style-parent:style0;
+    font-size:10.0pt;
+    font-weight:700;
+    vertical-align:middle;
+    border-top:1.0pt solid windowtext;
+    border-right:.5pt solid windowtext;
+    border-bottom:1.0pt solid windowtext;
+    border-left:none;
+    white-space:normal;}
+  .xl75
+    {mso-style-parent:style0;
+    font-size:10.0pt;
+    font-weight:700;
+    mso-number-format:"0\.000";
+    vertical-align:middle;
+    border-top:1.0pt solid windowtext;
+    border-right:.5pt solid windowtext;
+    border-bottom:1.0pt solid windowtext;
+    border-left:none;
+    white-space:normal;}
+  .xl76
+    {mso-style-parent:style0;
+    font-size:10.0pt;
+    font-weight:700;
+    mso-number-format:Scientific;
+    vertical-align:middle;
+    border-top:1.0pt solid windowtext;
+    border-right:.5pt solid windowtext;
+    border-bottom:1.0pt solid windowtext;
+    border-left:none;
+    white-space:normal;}
+  .xl77
+    {mso-style-parent:style0;
+    font-size:10.0pt;
+    font-weight:700;
+    mso-number-format:Scientific;
+    vertical-align:middle;
+    border-top:1.0pt solid windowtext;
+    border-right:1.0pt solid windowtext;
+    border-bottom:1.0pt solid windowtext;
+    border-left:none;
+    white-space:normal;}
+  .xl78
+    {mso-style-parent:style0;
+    font-size:10.0pt;
+    vertical-align:middle;
+    border-top:none;
+    border-right:.5pt solid windowtext;
+    border-bottom:.5pt solid windowtext;
+    border-left:.5pt solid windowtext;
+    white-space:normal;}
+  .xl79
+    {mso-style-parent:style0;
+    font-size:10.0pt;
+    vertical-align:middle;
+    border-top:none;
+    border-right:.5pt solid windowtext;
+    border-bottom:.5pt solid windowtext;
+    border-left:none;
+    white-space:normal;}
+  .xl80
+    {mso-style-parent:style0;
+    font-size:10.0pt;
+    mso-number-format:"0\.000";
+    vertical-align:middle;
+    border-top:none;
+    border-right:.5pt solid windowtext;
+    border-bottom:.5pt solid windowtext;
+    border-left:none;
+    white-space:normal;}
+  .xl81
+    {mso-style-parent:style0;
+    font-size:10.0pt;
+    mso-number-format:Scientific;
+    vertical-align:middle;
+    border-top:none;
+    border-right:.5pt solid windowtext;
+    border-bottom:.5pt solid windowtext;
+    border-left:none;
+    white-space:normal;}
+  .xl82
+    {mso-style-parent:style0;
+    font-size:10.0pt;
+    vertical-align:middle;
+    border-top:.5pt solid windowtext;
+    border-right:.5pt solid windowtext;
+    border-bottom:none;
+    border-left:none;
+    white-space:normal;}
+  .xl83
+    {mso-style-parent:style0;
+    font-size:10.0pt;
+    vertical-align:middle;
+    border-top:1.0pt solid windowtext;
+    border-right:.5pt solid windowtext;
+    border-bottom:1.0pt solid windowtext;
+    border-left:none;
+    white-space:normal;}
+  .xl84
+    {mso-style-parent:style0;
+    font-size:10.0pt;
+    vertical-align:middle;
+    border-top:none;
+    border-right:.5pt solid windowtext;
+    border-bottom:.5pt solid windowtext;
+    border-left:none;}
+  .xl85
+    {mso-style-parent:style0;
+    font-size:10.0pt;
+    vertical-align:middle;
+    border:.5pt solid windowtext;
+    white-space:normal;}
+  .xl86
+    {mso-style-parent:style0;
+    font-size:10.0pt;
+    vertical-align:middle;
+    border:.5pt solid windowtext;}
+  .xl87
+    {mso-style-parent:style0;
+    font-size:10.0pt;
+    mso-number-format:"0\.000";
+    vertical-align:middle;
+    border:.5pt solid windowtext;
+    white-space:normal;}
+  .xl88
+    {mso-style-parent:style0;
+    font-size:10.0pt;
+    mso-number-format:Scientific;
+    vertical-align:middle;
+    border:.5pt solid windowtext;
+    white-space:normal;}
+  .xl89
+    {mso-style-parent:style0;
+    font-size:22.0pt;
+    font-weight:700;
+    text-align:center;
+    vertical-align:middle;
+    white-space:normal;}
+  .xl90
+    {mso-style-parent:style0;
+    font-size:10.0pt;
+    vertical-align:middle;
+    border-top:none;
+    border-right:.5pt solid windowtext;
+    border-bottom:.5pt solid windowtext;
+    border-left:.5pt solid windowtext;}
+  .xl91
+    {mso-style-parent:style0;
+    font-size:10.0pt;
+    mso-number-format:"0\.000";
+    vertical-align:middle;
+    border-top:none;
+    border-right:.5pt solid windowtext;
+    border-bottom:.5pt solid windowtext;
+    border-left:.5pt solid windowtext;
+    white-space:normal;}
+  .xl92
+    {mso-style-parent:style0;
+    font-size:10.0pt;
+    mso-number-format:Scientific;
+    vertical-align:middle;
+    border-top:none;
+    border-right:.5pt solid windowtext;
+    border-bottom:.5pt solid windowtext;
+    border-left:.5pt solid windowtext;
+    white-space:normal;}
+  .xl93
+    {mso-style-parent:style0;
+    font-size:10.0pt;
+    vertical-align:middle;
+    border-top:1.0pt solid windowtext;
+    border-right:.5pt solid windowtext;
+    border-bottom:1.0pt solid windowtext;
+    border-left:.5pt solid windowtext;
+    white-space:normal;}
+  .xl94
+    {mso-style-parent:style0;
+    font-size:10.0pt;
+    font-weight:700;
+    vertical-align:middle;
+    border-top:1.0pt solid windowtext;
+    border-right:.5pt solid windowtext;
+    border-bottom:1.0pt solid windowtext;
+    border-left:.5pt solid windowtext;
+    white-space:normal;}
+  .xl95
+    {mso-style-parent:style0;
+    font-size:10.0pt;
+    font-weight:700;
+    mso-number-format:"0\.000";
+    vertical-align:middle;
+    border-top:1.0pt solid windowtext;
+    border-right:.5pt solid windowtext;
+    border-bottom:1.0pt solid windowtext;
+    border-left:.5pt solid windowtext;
+    white-space:normal;}
+  .xl96
+    {mso-style-parent:style0;
+    font-size:10.0pt;
+    font-weight:700;
+    mso-number-format:Scientific;
+    vertical-align:middle;
+    border-top:1.0pt solid windowtext;
+    border-right:.5pt solid windowtext;
+    border-bottom:1.0pt solid windowtext;
+    border-left:.5pt solid windowtext;
+    white-space:normal;}
+  .xl97
+    {mso-style-parent:style0;
+    font-size:10.0pt;
+    font-weight:700;
+    mso-number-format:Scientific;
+    vertical-align:middle;
+    border-top:1.0pt solid windowtext;
+    border-right:1.0pt solid windowtext;
+    border-bottom:1.0pt solid windowtext;
+    border-left:.5pt solid windowtext;
+    white-space:normal;}
+  </style>
   
   <script src="//unpkg.com/3d-force-graph"></script>
   <script src="//unpkg.com/three"></script>
   <script src="//unpkg.com/dat.gui"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
   <script src="//unpkg.com/three-spritetext"></script>
-  <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="http://requirejs.org/docs/release/2.1.5/comments/require.js"></script>
-  <script type="text/javascript" src="NKM4_final.json"></script>
-  <link rel="stylesheet" href="styles.css">
-
-  <style> body { margin: 0; } 
-
-
-    .button5 {
-        background-color: #475AFF;
-        color: white;
-        outline: 3px solid black;
-      }
-      </style>
 
 </head>
-
 <body>
-    
-
+      
+  
   <div id="3d-graph"></div>
 
-  <div style="position: absolute; top: 150px; left: 5px;">
-    <button class="btn button1" id="allnodes" onclick="window.location.href = 'index.html'">
+  <div style="position: absolute; top: 12%">
+    <button class="btn button1 d-block rounded-0" id="allnodes" onclick="window.location.href = 'index.html'">
       ALL NODES
     </button>
-    <button class="btn button2" id="module1" onclick="window.location.href = 'nkm4.html'">
+    <button class="btn button2 d-block rounded-0" id="module1" onclick="window.location.href = 'nkm4.html'">
       NKM4
     </button>
-    <button class="btn button3" id="module2" onclick="window.location.href = 'bcellm7.html'">
+    <button class="btn button3 d-block rounded-0" id="module2" onclick="window.location.href = 'bcellm7.html'">
       BCellM7
     </button>
-    <button class="btn button4" id="module3" onclick="window.location.href = 'monom6.html'">
+    <button class="btn button4 d-block rounded-0" id="module3" onclick="window.location.href = 'monom6.html'">
       MonoM6
     </button>
-    <button class="btn button5" id="module4" onclick="window.location.href = 'nkm13.html'">
+    <button class="btn button5 d-block rounded-0" id="module4" onclick="window.location.href = 'nkm13.html'">
       NKM13
     </button>
-    <button class="btn button6" id="module5" onclick="window.location.href = 'nkm9.html'">
+    <button class="btn button6 d-block rounded-0" id="module5" onclick="window.location.href = 'nkm9.html'">
       NKM9
+    </button>
+    <button type="button" class="btn d-block rounded-0" data-toggle="modal" data-target="#modalTable">
+      Show data
     </button>
     
   </div>
 
+  <div id="gui_container"></div>
 
   <script type="module">
 
@@ -57,9 +410,11 @@
   const Graph = ForceGraph3D()
         .backgroundColor("#fff")
       (elem)
-        .jsonUrl('NKM13_final.json')
+        .jsonUrl('/data/final_data/NKM13_final.json')
         .nodeLabel(node => (`<span style="color: black">${node.id}</span>`))
         .nodeThreeObject(node => colorNodes(node))
+        .nodeResolution(3)
+        .linkResolution(3)
         .linkDirectionalArrowLength(8)
         .linkDirectionalArrowRelPos(1)
         .linkWidth(1)
@@ -80,7 +435,6 @@
 
   
   function colorNodes(node) {
-      //var obj = null;
     var color = "#000000"
     if (node.group == "NKM4")
       color = "#AB3428"
@@ -97,33 +451,27 @@
     
     if (node.kd == "1")
       var obj = new THREE.Mesh(
-              new THREE.SphereGeometry(30),
-              //new THREE.BoxGeometry(30, 30, 30),
-              //new THREE.MeshBasicMaterial({ depthWrite: true, transparent: false, opacity: 0 })
-              new THREE.MeshLambertMaterial({
-            //depthWrite: false,
+            new THREE.SphereGeometry(20),
+            new THREE.MeshBasicMaterial({
             transparent: false,
             opacity: 1,
             wireframe: false,
-            emissive: "#000000",
-            color: color //FFAE03
-            //vertexColors: THREE.FaceColors,
-          })
-            );
+            color: color
+          }));
     else    
       var obj = new THREE.Mesh(
-              new THREE.SphereGeometry(5),
-              //new THREE.MeshBasicMaterial({ depthWrite: true, transparent: false, opacity: 0 })
-              new THREE.MeshLambertMaterial({
+            new THREE.SphereGeometry(5),
+            new THREE.MeshBasicMaterial({
             depthWrite: false,
             transparent: false,
             opacity: 1,
             wireframe: false,
-            //emissive: "#181818",
-            color: color //FFAE03
-            //vertexColors: THREE.FaceColors,
-          })
-            );  
+            color: color
+          })); 
+      const sprite = new SpriteText(node.id);
+      sprite.color = 'rgb(100,100,100)';
+      sprite.textHeight = 6;
+      obj.add(sprite); 
       return obj;
   }
 
@@ -132,233 +480,220 @@
     };
   
   const settings = new Settings();
-  // const gui = new dat.GUI();
-
   var gui = new dat.GUI();
   gui.domElement.id = 'gui';
-
-/*      $.getJSON('./NKM4_final.json', function(data) {
-    console.log(data['nodes'][0]["id"])
-    $.each(data['nodes'], function (index, item) {
-      console.log(typeof(item['id']))
-      console.log(item["id"])
-      nodeList.push(item['id'])
-    })
-
-  console.log("hello", JSON.stringify(nodeList)) 
-  var nodeListNew = nodeList.entries()
-  console.log(nodeListNew) */
+  gui_container.appendChild(gui.domElement);
 
   var nodeList = ['GP1BA',
- 'LGALSL',
- 'RPL23AP7',
- 'SCFD2',
- 'RGS18',
- 'TJP2',
- 'PPBP',
- 'GNG11',
- 'RP13-270P17.2',
- 'C21orf7',
- 'ELOVL7',
- 'C12orf76',
- 'SMIM5',
- 'AC091814.3',
- 'ADIPOR1',
- 'MAX',
- 'ITGB5',
- 'C7orf41',
- 'LIMS1',
- 'AGBL5',
- 'GAS2L1',
- 'ITGB3',
- 'RUFY1',
- 'C5orf4',
- 'RP11-4O1.2',
- 'RP3-370M22.8',
- 'SMOX',
- 'AP001189.4',
- 'MLH3',
- 'WNT3',
- 'NUGGC',
- 'APP',
- 'CDK2AP1',
- 'ARG2',
- 'CLU',
- 'TSPAN13',
- 'SLC40A1',
- 'HIST1H2BJ',
- 'PEAR1',
- 'ENKUR',
- 'MCTP1',
- 'SRC',
- 'CDKN1A',
- 'J01415.23',
- 'GP9',
- 'VWF',
- 'BMP6',
- 'PDGFB',
- 'SNCA',
- 'TRIM58',
- 'CD36',
- 'RP1-90J20.7',
- 'EHD3',
- 'PHGDH',
- 'R3HDM4',
- 'PGRMC1',
- 'DAPP1',
- 'SELP',
- 'PF4',
- 'C7orf53',
- 'MARCHF2',
- 'F13A1',
- 'U66061.31',
- 'XK',
- 'HEMGN',
- 'RP11-234K19.2',
- 'TPTEP1',
- 'LHFPL2',
- 'EPB49',
- 'TUBB6',
- 'HIST1H2BK',
- 'HGD',
- 'CDC42BPB',
- 'C2orf88',
- 'RP11-501J20.5',
- 'ACTR3B',
- 'MIR4485',
- 'ESAM',
- 'RAB6B',
- 'RP11-64K12.2',
- 'FHL2',
- 'RTN2',
- 'MFSD2B',
- 'AIG1',
- 'PDLIM1',
- 'CMTM5',
- 'JAM3',
- 'C1orf198',
- 'PLA2G12A',
- 'MAP1A',
- 'CCDC90A',
- 'MMD',
- 'CXCL5',
- 'RGS10',
- 'HIST1H3H',
- 'GNB5',
- 'CTDSPL',
- 'RHOBTB1',
- 'MYL9',
- 'HIST1H2BD',
- 'HIST1H4H',
- 'GNAZ',
- 'CLMN',
- 'NPL',
- 'MYO1C',
- 'ALOX12',
- 'DENND2C',
- 'PBX1',
- 'C1RL',
- 'ABLIM3',
- 'TREML1',
- 'COL6A3',
- 'LOH12CR1',
- 'SNN',
- 'EPOR',
- 'GMPR',
- 'TSPAN18',
- 'AFAP1L2',
- 'TSPAN33',
- 'TMCC2',
- 'NT5C3',
- 'DCTN5',
- 'BANK1',
- 'SCN1B',
- 'MYLK',
- 'GPX1',
- 'TMEM40',
- 'GNAS',
- 'PARVB',
- 'CTTN',
- 'SH3BGRL2',
- 'PTCRA',
- 'SPARC',
- 'TLR5',
- 'PCSK6',
- 'PRKAR1B',
- 'ACRBP',
- 'LTBP1',
- 'FRMD3',
- 'CLEC1B',
- 'RP11-356I2.4',
- 'TSPAN9',
- 'CXCR2P1',
- 'MPP1',
- 'PLXDC1',
- 'MFAP3L',
- 'TMEM55A',
- 'GGTA1P',
- 'ST3GAL3',
- 'HIST1H2AC',
- 'MFSD1',
- 'ACVR1',
- 'NEXN',
- 'GUCY1B3',
- 'HIST1H2AG',
- 'ZNF367',
- 'FHL1',
- 'DNM3',
- 'BEND2',
- 'NGFRAP1',
- 'MEIS1',
- 'TTC7B',
- 'CD300LB',
- 'LAPTM4B',
- 'PTGS1',
- 'HIST2H2BE',
- 'TAGLN2',
- 'MSANTD3',
- 'CTNNAL1',
- 'SAMD14',
- 'GFI1B',
- 'NT5M',
- 'GRAP2',
- 'PKIG',
- 'IRF8',
- 'DSE',
- 'PRKAR2B',
- 'MGLL',
- 'GRHL1',
- 'ACTN1',
- 'ZNF185',
- 'ABCC3',
- 'CPNE5',
- 'OSBP2',
- 'CYP2R1',
- 'RP11-678G14.3',
- 'SEPTIN5',
- 'NRGN',
- 'ITGA2B',
- 'AC093818.1',
- 'CTSA',
- 'AC078883.3',
- 'AP003068.23',
- 'SDPR',
- 'NCK2',
- 'TUBB1',
- 'CA2',
- 'ARHGAP6',
- 'C6orf25',
- 'ANK1',
- 'TNFSF4',
- 'PTK2']
+  'LGALSL',
+  'RPL23AP7',
+  'SCFD2',
+  'RGS18',
+  'TJP2',
+  'PPBP',
+  'GNG11',
+  'RP13-270P17.2',
+  'C21orf7',
+  'ELOVL7',
+  'C12orf76',
+  'SMIM5',
+  'AC091814.3',
+  'ADIPOR1',
+  'MAX',
+  'ITGB5',
+  'C7orf41',
+  'LIMS1',
+  'AGBL5',
+  'GAS2L1',
+  'ITGB3',
+  'RUFY1',
+  'C5orf4',
+  'RP11-4O1.2',
+  'RP3-370M22.8',
+  'SMOX',
+  'AP001189.4',
+  'MLH3',
+  'WNT3',
+  'NUGGC',
+  'APP',
+  'CDK2AP1',
+  'ARG2',
+  'CLU',
+  'TSPAN13',
+  'SLC40A1',
+  'HIST1H2BJ',
+  'PEAR1',
+  'ENKUR',
+  'MCTP1',
+  'SRC',
+  'CDKN1A',
+  'J01415.23',
+  'GP9',
+  'VWF',
+  'BMP6',
+  'PDGFB',
+  'SNCA',
+  'TRIM58',
+  'CD36',
+  'RP1-90J20.7',
+  'EHD3',
+  'PHGDH',
+  'R3HDM4',
+  'PGRMC1',
+  'DAPP1',
+  'SELP',
+  'PF4',
+  'C7orf53',
+  'MARCHF2',
+  'F13A1',
+  'U66061.31',
+  'XK',
+  'HEMGN',
+  'RP11-234K19.2',
+  'TPTEP1',
+  'LHFPL2',
+  'EPB49',
+  'TUBB6',
+  'HIST1H2BK',
+  'HGD',
+  'CDC42BPB',
+  'C2orf88',
+  'RP11-501J20.5',
+  'ACTR3B',
+  'MIR4485',
+  'ESAM',
+  'RAB6B',
+  'RP11-64K12.2',
+  'FHL2',
+  'RTN2',
+  'MFSD2B',
+  'AIG1',
+  'PDLIM1',
+  'CMTM5',
+  'JAM3',
+  'C1orf198',
+  'PLA2G12A',
+  'MAP1A',
+  'CCDC90A',
+  'MMD',
+  'CXCL5',
+  'RGS10',
+  'HIST1H3H',
+  'GNB5',
+  'CTDSPL',
+  'RHOBTB1',
+  'MYL9',
+  'HIST1H2BD',
+  'HIST1H4H',
+  'GNAZ',
+  'CLMN',
+  'NPL',
+  'MYO1C',
+  'ALOX12',
+  'DENND2C',
+  'PBX1',
+  'C1RL',
+  'ABLIM3',
+  'TREML1',
+  'COL6A3',
+  'LOH12CR1',
+  'SNN',
+  'EPOR',
+  'GMPR',
+  'TSPAN18',
+  'AFAP1L2',
+  'TSPAN33',
+  'TMCC2',
+  'NT5C3',
+  'DCTN5',
+  'BANK1',
+  'SCN1B',
+  'MYLK',
+  'GPX1',
+  'TMEM40',
+  'GNAS',
+  'PARVB',
+  'CTTN',
+  'SH3BGRL2',
+  'PTCRA',
+  'SPARC',
+  'TLR5',
+  'PCSK6',
+  'PRKAR1B',
+  'ACRBP',
+  'LTBP1',
+  'FRMD3',
+  'CLEC1B',
+  'RP11-356I2.4',
+  'TSPAN9',
+  'CXCR2P1',
+  'MPP1',
+  'PLXDC1',
+  'MFAP3L',
+  'TMEM55A',
+  'GGTA1P',
+  'ST3GAL3',
+  'HIST1H2AC',
+  'MFSD1',
+  'ACVR1',
+  'NEXN',
+  'GUCY1B3',
+  'HIST1H2AG',
+  'ZNF367',
+  'FHL1',
+  'DNM3',
+  'BEND2',
+  'NGFRAP1',
+  'MEIS1',
+  'TTC7B',
+  'CD300LB',
+  'LAPTM4B',
+  'PTGS1',
+  'HIST2H2BE',
+  'TAGLN2',
+  'MSANTD3',
+  'CTNNAL1',
+  'SAMD14',
+  'GFI1B',
+  'NT5M',
+  'GRAP2',
+  'PKIG',
+  'IRF8',
+  'DSE',
+  'PRKAR2B',
+  'MGLL',
+  'GRHL1',
+  'ACTN1',
+  'ZNF185',
+  'ABCC3',
+  'CPNE5',
+  'OSBP2',
+  'CYP2R1',
+  'RP11-678G14.3',
+  'SEPTIN5',
+  'NRGN',
+  'ITGA2B',
+  'AC093818.1',
+  'CTSA',
+  'AC078883.3',
+  'AP003068.23',
+  'SDPR',
+  'NCK2',
+  'TUBB1',
+  'CA2',
+  'ARHGAP6',
+  'C6orf25',
+  'ANK1',
+  'TNFSF4',
+  'PTK2']
+ 
+  var sortedNodeList = nodeList.sort()
 
-
-  const controllerSearch = gui.add(settings, "nodeKeys", nodeList).name("Select Node");
+  const controllerSearch = gui.add(settings, "nodeKeys", sortedNodeList).name("Select Node");
 
   var node_key = settings.nodeKeys
 
   controllerSearch.onChange(updateSearch);
-
 
   function updateSearch() {
 
@@ -381,12 +716,400 @@
       
   </script>
 
-    <div id="logo"> 
-      <img src="logo.png" width="700"> 
+  <div id="logo" class="fixed-top">
+    <img src="/img/logo.png" width="700"> 
+  </div>
+
+    <div id="legend" class="position-fixed"> 
+      <img src="/img/Legend.png" width="125"> 
     </div> 
 
-    <div id="legend"> 
-      <img src="Legend.png" width="125"> 
-    </div> 
+
+    <div id="modalTable" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Module Enrichment Data</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            
+            
+            <div id="NKM13_17278" align=center x:publishsource="Excel">
+
+              <table border=0 cellpadding=0 cellspacing=0 width=902 style='border-collapse:
+               collapse;table-layout:fixed;width:676pt'>
+               <col class=xl66 width=71 style='mso-width-source:userset;mso-width-alt:2261;
+               width:53pt'>
+               <col class=xl66 width=121 style='mso-width-source:userset;mso-width-alt:3882;
+               width:91pt'>
+               <col class=xl66 width=395 style='mso-width-source:userset;mso-width-alt:12629;
+               width:296pt'>
+               <col class=xl66 width=145 style='mso-width-source:userset;mso-width-alt:4650;
+               width:109pt'>
+               <col class=xl66 width=87 style='mso-width-source:userset;mso-width-alt:2773;
+               width:65pt'>
+               <col class=xl66 width=83 style='mso-width-source:userset;mso-width-alt:2645;
+               width:62pt'>
+               <tr height=35 style='mso-height-source:userset;height:26.0pt'>
+                <td colspan=6 height=35 class=xl89 width=902 style='height:26.0pt;width:676pt'>Module
+                Enrichments: NKM13</td>
+               </tr>
+               <tr height=21 style='height:16.0pt'>
+                <td height=21 class=xl66 width=71 style='height:16.0pt;width:53pt'></td>
+                <td class=xl66 width=121 style='width:91pt'></td>
+                <td class=xl66 width=395 style='width:296pt'></td>
+                <td class=xl66 width=145 style='width:109pt'></td>
+                <td class=xl66 width=87 style='width:65pt'></td>
+                <td class=xl66 width=83 style='width:62pt'></td>
+               </tr>
+               <tr height=29 style='height:22.0pt'>
+                <td height=29 class=xl66 width=71 style='height:22.0pt;width:53pt'></td>
+                <td class=xl66 width=121 style='width:91pt'></td>
+                <td class=xl67 width=395 style='width:296pt'>GO</td>
+                <td class=xl66 width=145 style='width:109pt'></td>
+                <td class=xl66 width=87 style='width:65pt'></td>
+                <td class=xl66 width=83 style='width:62pt'></td>
+               </tr>
+               <tr height=41 style='height:31.0pt'>
+                <td height=41 class=xl68 width=71 style='height:31.0pt;width:53pt'>Module
+                name.</td>
+                <td class=xl69 width=121 style='width:91pt'>GO ID Term Number.</td>
+                <td class=xl70 width=395 style='width:296pt'>GO ID Term.</td>
+                <td class=xl71 width=145 style='width:109pt'>Fold enrichment of term to
+                module.</td>
+                <td class=xl72 width=87 style='width:65pt'>P value.</td>
+                <td class=xl72 width=83 style='width:62pt'>FDR adjusted P value.</td>
+               </tr>
+               <tr height=23 style='height:17.0pt'>
+                <td height=23 class=xl73 width=71 style='height:17.0pt;width:53pt'>Module</td>
+                <td class=xl74 width=121 style='width:91pt'>GO.ID</td>
+                <td class=xl74 width=395 style='width:296pt'>Term</td>
+                <td class=xl75 width=145 style='width:109pt'>fold_enrichment</td>
+                <td class=xl76 width=87 style='width:65pt'>pval</td>
+                <td class=xl77 width=83 style='width:62pt'>fdr</td>
+               </tr>
+               <tr height=21 style='height:16.0pt'>
+                <td height=21 class=xl78 width=71 style='height:16.0pt;width:53pt'>NKM13</td>
+                <td class=xl79 width=121 style='width:91pt'>GO:0031091</td>
+                <td class=xl79 width=395 style='width:296pt'>platelet alpha granule</td>
+                <td class=xl80 align=right width=145 style='width:109pt'>16.495</td>
+                <td class=xl81 align=right width=87 style='width:65pt'>9.10E-16</td>
+                <td class=xl81 align=right width=83 style='width:62pt'>1.84E-11</td>
+               </tr>
+               <tr height=21 style='height:16.0pt'>
+                <td height=21 class=xl78 width=71 style='height:16.0pt;width:53pt'>NKM13</td>
+                <td class=xl79 width=121 style='width:91pt'>GO:0007596</td>
+                <td class=xl79 width=395 style='width:296pt'>blood coagulation</td>
+                <td class=xl80 align=right width=145 style='width:109pt'>7.143</td>
+                <td class=xl81 align=right width=87 style='width:65pt'>3.50E-13</td>
+                <td class=xl81 align=right width=83 style='width:62pt'>1.94E-09</td>
+               </tr>
+               <tr height=21 style='height:16.0pt'>
+                <td height=21 class=xl78 width=71 style='height:16.0pt;width:53pt'>NKM13</td>
+                <td class=xl79 width=121 style='width:91pt'>GO:0002576</td>
+                <td class=xl79 width=395 style='width:296pt'>platelet degranulation</td>
+                <td class=xl80 align=right width=145 style='width:109pt'>11.594</td>
+                <td class=xl81 align=right width=87 style='width:65pt'>3.50E-13</td>
+                <td class=xl81 align=right width=83 style='width:62pt'>1.94E-09</td>
+               </tr>
+               <tr height=21 style='height:16.0pt'>
+                <td height=21 class=xl78 width=71 style='height:16.0pt;width:53pt'>NKM13</td>
+                <td class=xl79 width=121 style='width:91pt'>GO:0050817</td>
+                <td class=xl79 width=395 style='width:296pt'>coagulation</td>
+                <td class=xl80 align=right width=145 style='width:109pt'>7.097</td>
+                <td class=xl81 align=right width=87 style='width:65pt'>3.90E-13</td>
+                <td class=xl81 align=right width=83 style='width:62pt'>1.94E-09</td>
+               </tr>
+               <tr height=21 style='height:16.0pt'>
+                <td height=21 class=xl78 width=71 style='height:16.0pt;width:53pt'>NKM13</td>
+                <td class=xl79 width=121 style='width:91pt'>GO:0030168</td>
+                <td class=xl79 width=395 style='width:296pt'>platelet activation</td>
+                <td class=xl80 align=right width=145 style='width:109pt'>10.303</td>
+                <td class=xl81 align=right width=87 style='width:65pt'>4.80E-13</td>
+                <td class=xl81 align=right width=83 style='width:62pt'>1.94E-09</td>
+               </tr>
+               <tr height=21 style='height:16.0pt'>
+                <td height=21 class=xl78 width=71 style='height:16.0pt;width:53pt'>NKM13</td>
+                <td class=xl79 width=121 style='width:91pt'>GO:0007599</td>
+                <td class=xl79 width=395 style='width:296pt'>hemostasis</td>
+                <td class=xl80 align=right width=145 style='width:109pt'>6.962</td>
+                <td class=xl81 align=right width=87 style='width:65pt'>5.90E-13</td>
+                <td class=xl81 align=right width=83 style='width:62pt'>1.98E-09</td>
+               </tr>
+               <tr height=21 style='height:16.0pt'>
+                <td height=21 class=xl78 width=71 style='height:16.0pt;width:53pt'>NKM13</td>
+                <td class=xl79 width=121 style='width:91pt'>GO:0042060</td>
+                <td class=xl79 width=395 style='width:296pt'>wound healing</td>
+                <td class=xl80 align=right width=145 style='width:109pt'>5.263</td>
+                <td class=xl81 align=right width=87 style='width:65pt'>7.80E-12</td>
+                <td class=xl81 align=right width=83 style='width:62pt'>2.25E-08</td>
+               </tr>
+               <tr height=21 style='height:16.0pt'>
+                <td height=21 class=xl78 width=71 style='height:16.0pt;width:53pt'>NKM13</td>
+                <td class=xl79 width=121 style='width:91pt'>GO:0009611</td>
+                <td class=xl79 width=395 style='width:296pt'>response to wounding</td>
+                <td class=xl80 align=right width=145 style='width:109pt'>4.696</td>
+                <td class=xl81 align=right width=87 style='width:65pt'>1.50E-11</td>
+                <td class=xl81 align=right width=83 style='width:62pt'>3.78E-08</td>
+               </tr>
+               <tr height=21 style='height:16.0pt'>
+                <td height=21 class=xl78 width=71 style='height:16.0pt;width:53pt'>NKM13</td>
+                <td class=xl79 width=121 style='width:91pt'>GO:0050878</td>
+                <td class=xl79 width=395 style='width:296pt'>regulation of body fluid levels</td>
+                <td class=xl80 align=right width=145 style='width:109pt'>5.489</td>
+                <td class=xl81 align=right width=87 style='width:65pt'>2.50E-11</td>
+                <td class=xl81 align=right width=83 style='width:62pt'>5.61E-08</td>
+               </tr>
+               <tr height=21 style='height:16.0pt'>
+                <td height=21 class=xl78 width=71 style='height:16.0pt;width:53pt'>NKM13</td>
+                <td class=xl79 width=121 style='width:91pt'>GO:0031092</td>
+                <td class=xl79 width=395 style='width:296pt'>platelet alpha granule membrane</td>
+                <td class=xl80 align=right width=145 style='width:109pt'>33.333</td>
+                <td class=xl81 align=right width=87 style='width:65pt'>4.10E-10</td>
+                <td class=xl81 align=right width=83 style='width:62pt'>8.26E-07</td>
+               </tr>
+               <tr height=21 style='height:16.0pt'>
+                <td height=21 class=xl78 width=71 style='height:16.0pt;width:53pt'>NKM13</td>
+                <td class=xl79 width=121 style='width:91pt'>GO:0005886</td>
+                <td class=xl79 width=395 style='width:296pt'>plasma membrane</td>
+                <td class=xl80 align=right width=145 style='width:109pt'>1.893</td>
+                <td class=xl81 align=right width=87 style='width:65pt'>4.50E-10</td>
+                <td class=xl81 align=right width=83 style='width:62pt'>8.26E-07</td>
+               </tr>
+               <tr height=21 style='height:16.0pt'>
+                <td height=21 class=xl78 width=71 style='height:16.0pt;width:53pt'>NKM13</td>
+                <td class=xl79 width=121 style='width:91pt'>GO:0071944</td>
+                <td class=xl79 width=395 style='width:296pt'>cell periphery</td>
+                <td class=xl80 align=right width=145 style='width:109pt'>1.864</td>
+                <td class=xl81 align=right width=87 style='width:65pt'>6.80E-10</td>
+                <td class=xl81 align=right width=83 style='width:62pt'>1.14E-06</td>
+               </tr>
+               <tr height=21 style='height:16.0pt'>
+                <td height=21 class=xl78 width=71 style='height:16.0pt;width:53pt'>NKM13</td>
+                <td class=xl79 width=121 style='width:91pt'>GO:0031093</td>
+                <td class=xl79 width=395 style='width:296pt'>platelet alpha granule lumen</td>
+                <td class=xl80 align=right width=145 style='width:109pt'>13.636</td>
+                <td class=xl81 align=right width=87 style='width:65pt'>1.40E-08</td>
+                <td class=xl81 align=right width=83 style='width:62pt'>2.17E-05</td>
+               </tr>
+               <tr height=21 style='height:16.0pt'>
+                <td height=21 class=xl78 width=71 style='height:16.0pt;width:53pt'>NKM13</td>
+                <td class=xl79 width=121 style='width:91pt'>GO:0007155</td>
+                <td class=xl79 width=395 style='width:296pt'>cell adhesion</td>
+                <td class=xl80 align=right width=145 style='width:109pt'>2.850</td>
+                <td class=xl81 align=right width=87 style='width:65pt'>3.20E-08</td>
+                <td class=xl81 align=right width=83 style='width:62pt'>4.61E-05</td>
+               </tr>
+               <tr height=21 style='height:16.0pt'>
+                <td height=21 class=xl78 width=71 style='height:16.0pt;width:53pt'>NKM13</td>
+                <td class=xl79 width=121 style='width:91pt'>GO:0022610</td>
+                <td class=xl79 width=395 style='width:296pt'>biological adhesion</td>
+                <td class=xl80 align=right width=145 style='width:109pt'>2.837</td>
+                <td class=xl81 align=right width=87 style='width:65pt'>3.60E-08</td>
+                <td class=xl81 align=right width=83 style='width:62pt'>4.84E-05</td>
+               </tr>
+               <tr height=21 style='height:16.0pt'>
+                <td height=21 class=xl78 width=71 style='height:16.0pt;width:53pt'>NKM13</td>
+                <td class=xl79 width=121 style='width:91pt'>GO:0009617</td>
+                <td class=xl79 width=395 style='width:296pt'>response to bacterium</td>
+                <td class=xl80 align=right width=145 style='width:109pt'>4.049</td>
+                <td class=xl81 align=right width=87 style='width:65pt'>1.00E-07</td>
+                <td class=xl81 align=right width=83 style='width:62pt'>1.26E-04</td>
+               </tr>
+               <tr height=21 style='height:16.0pt'>
+                <td height=21 class=xl78 width=71 style='height:16.0pt;width:53pt'>NKM13</td>
+                <td class=xl79 width=121 style='width:91pt'>GO:0061844</td>
+                <td class=xl79 width=395 style='width:296pt'>antimicrobial humoral immune
+                response me...</td>
+                <td class=xl80 align=right width=145 style='width:109pt'>22.222</td>
+                <td class=xl81 align=right width=87 style='width:65pt'>1.60E-07</td>
+                <td class=xl81 align=right width=83 style='width:62pt'>1.90E-04</td>
+               </tr>
+               <tr height=21 style='height:16.0pt'>
+                <td height=21 class=xl78 width=71 style='height:16.0pt;width:53pt'>NKM13</td>
+                <td class=xl79 width=121 style='width:91pt'>GO:0019730</td>
+                <td class=xl79 width=395 style='width:296pt'>antimicrobial humoral response</td>
+                <td class=xl80 align=right width=145 style='width:109pt'>15.909</td>
+                <td class=xl81 align=right width=87 style='width:65pt'>2.00E-07</td>
+                <td class=xl81 align=right width=83 style='width:62pt'>2.24E-04</td>
+               </tr>
+               <tr height=21 style='height:16.0pt'>
+                <td height=21 class=xl78 width=71 style='height:16.0pt;width:53pt'>NKM13</td>
+                <td class=xl79 width=121 style='width:91pt'>GO:0070527</td>
+                <td class=xl79 width=395 style='width:296pt'>platelet aggregation</td>
+                <td class=xl80 align=right width=145 style='width:109pt'>11.940</td>
+                <td class=xl81 align=right width=87 style='width:65pt'>2.60E-07</td>
+                <td class=xl81 align=right width=83 style='width:62pt'>2.76E-04</td>
+               </tr>
+               <tr height=21 style='height:16.0pt'>
+                <td height=21 class=xl78 width=71 style='height:16.0pt;width:53pt'>NKM13</td>
+                <td class=xl79 width=121 style='width:91pt'>GO:0065008</td>
+                <td class=xl79 width=395 style='width:296pt'>regulation of biological quality</td>
+                <td class=xl80 align=right width=145 style='width:109pt'>1.760</td>
+                <td class=xl81 align=right width=87 style='width:65pt'>7.30E-07</td>
+                <td class=xl81 align=right width=83 style='width:62pt'>7.15E-04</td>
+               </tr>
+               <tr height=21 style='height:16.0pt'>
+                <td height=21 class=xl66 width=71 style='height:16.0pt;width:53pt'></td>
+                <td class=xl66 width=121 style='width:91pt'></td>
+                <td class=xl66 width=395 style='width:296pt'></td>
+                <td class=xl66 width=145 style='width:109pt'></td>
+                <td class=xl66 width=87 style='width:65pt'></td>
+                <td class=xl66 width=83 style='width:62pt'></td>
+               </tr>
+               <tr height=29 style='height:22.0pt'>
+                <td height=29 class=xl66 width=71 style='height:22.0pt;width:53pt'></td>
+                <td class=xl66 width=121 style='width:91pt'></td>
+                <td class=xl67 width=395 style='width:296pt'>MSigDB Hallmark</td>
+                <td class=xl66 width=145 style='width:109pt'></td>
+                <td class=xl66 width=87 style='width:65pt'></td>
+                <td class=xl66 width=83 style='width:62pt'></td>
+               </tr>
+               <tr height=41 style='height:31.0pt'>
+                <td height=41 class=xl68 width=71 style='height:31.0pt;width:53pt'>Module
+                name.</td>
+                <td class=xl82 width=121 style='width:91pt'>&nbsp;</td>
+                <td class=xl70 width=395 style='width:296pt'>MSigDB Hallmark Term.</td>
+                <td class=xl71 width=145 style='width:109pt'>Fold enrichment of term to
+                module.</td>
+                <td class=xl72 width=87 style='width:65pt'>P value.</td>
+                <td class=xl72 width=83 style='width:62pt'>FDR adjusted P value.</td>
+               </tr>
+               <tr height=23 style='height:17.0pt'>
+                <td height=23 class=xl73 width=71 style='height:17.0pt;width:53pt'>Module</td>
+                <td class=xl83 width=121 style='width:91pt'>&nbsp;</td>
+                <td class=xl74 width=395 style='width:296pt'>Term</td>
+                <td class=xl75 width=145 style='width:109pt'>fold_enrichment</td>
+                <td class=xl76 width=87 style='width:65pt'>pval</td>
+                <td class=xl77 width=83 style='width:62pt'>fdr</td>
+               </tr>
+               <tr height=21 style='height:16.0pt'>
+                <td height=21 class=xl78 width=71 style='height:16.0pt;width:53pt'>NKM13</td>
+                <td class=xl79 width=121 style='width:91pt'>&nbsp;</td>
+                <td class=xl79 width=395 style='width:296pt'>HALLMARK_MYOGENESIS</td>
+                <td class=xl80 align=right width=145 style='width:109pt'>6.165</td>
+                <td class=xl81 align=right width=87 style='width:65pt'>5.03E-06</td>
+                <td class=xl81 align=right width=83 style='width:62pt'>1.21E-04</td>
+               </tr>
+               <tr height=21 style='height:16.0pt'>
+                <td height=21 class=xl78 width=71 style='height:16.0pt;width:53pt'>NKM13</td>
+                <td class=xl79 width=121 style='width:91pt'>&nbsp;</td>
+                <td class=xl79 width=395 style='width:296pt'>HALLMARK_HEME_METABOLISM</td>
+                <td class=xl80 align=right width=145 style='width:109pt'>5.174</td>
+                <td class=xl81 align=right width=87 style='width:65pt'>3.62E-06</td>
+                <td class=xl81 align=right width=83 style='width:62pt'>1.21E-04</td>
+               </tr>
+               <tr height=21 style='height:16.0pt'>
+                <td height=21 class=xl78 width=71 style='height:16.0pt;width:53pt'>NKM13</td>
+                <td class=xl79 width=121 style='width:91pt'>&nbsp;</td>
+                <td class=xl79 width=395 style='width:296pt'>HALLMARK_COAGULATION</td>
+                <td class=xl80 align=right width=145 style='width:109pt'>7.648</td>
+                <td class=xl81 align=right width=87 style='width:65pt'>9.20E-06</td>
+                <td class=xl81 align=right width=83 style='width:62pt'>1.47E-04</td>
+               </tr>
+               <tr height=21 style='height:16.0pt'>
+                <td height=21 class=xl66 width=71 style='height:16.0pt;width:53pt'></td>
+                <td class=xl66 width=121 style='width:91pt'></td>
+                <td class=xl66 width=395 style='width:296pt'></td>
+                <td class=xl66 width=145 style='width:109pt'></td>
+                <td class=xl66 width=87 style='width:65pt'></td>
+                <td class=xl66 width=83 style='width:62pt'></td>
+               </tr>
+               <tr height=29 style='height:22.0pt'>
+                <td height=29 class=xl66 width=71 style='height:22.0pt;width:53pt'></td>
+                <td class=xl66 width=121 style='width:91pt'></td>
+                <td class=xl67 width=395 style='width:296pt'>MSigDB C7</td>
+                <td class=xl66 width=145 style='width:109pt'></td>
+                <td class=xl66 width=87 style='width:65pt'></td>
+                <td class=xl66 width=83 style='width:62pt'></td>
+               </tr>
+               <tr height=41 style='height:31.0pt'>
+                <td height=41 class=xl68 width=71 style='height:31.0pt;width:53pt'>Module
+                name.</td>
+                <td class=xl82 width=121 style='width:91pt'>&nbsp;</td>
+                <td class=xl70 width=395 style='width:296pt'>MSigDB C7 Term.</td>
+                <td class=xl71 width=145 style='width:109pt'>Fold enrichment of term to
+                module.</td>
+                <td class=xl72 width=87 style='width:65pt'>P value.</td>
+                <td class=xl72 width=83 style='width:62pt'>FDR adjusted P value.</td>
+               </tr>
+               <tr height=23 style='height:17.0pt'>
+                <td height=23 class=xl73 width=71 style='height:17.0pt;width:53pt'>Module</td>
+                <td class=xl93 width=121 style='border-left:none;width:91pt'>&nbsp;</td>
+                <td class=xl94 width=395 style='border-left:none;width:296pt'>Term</td>
+                <td class=xl95 width=145 style='border-left:none;width:109pt'>fold_enrichment</td>
+                <td class=xl96 width=87 style='border-left:none;width:65pt'>pval</td>
+                <td class=xl97 width=83 style='border-left:none;width:62pt'>fdr</td>
+               </tr>
+               <tr height=21 style='height:16.0pt'>
+                <td height=21 class=xl78 width=71 style='height:16.0pt;width:53pt'>NKM13</td>
+                <td class=xl78 width=121 style='border-left:none;width:91pt'>&nbsp;</td>
+                <td class=xl90 style='border-left:none'>GSE13485_DAY3_VS_DAY7_YF17D_VACCINE_PBMC_DN</td>
+                <td class=xl91 align=right width=145 style='border-left:none;width:109pt'>6.282</td>
+                <td class=xl92 align=right width=87 style='border-left:none;width:65pt'>4.57E-07</td>
+                <td class=xl92 align=right width=83 style='border-left:none;width:62pt'>3.18E-04</td>
+               </tr>
+               <tr height=21 style='height:16.0pt'>
+                <td height=21 class=xl85 width=71 style='height:16.0pt;border-top:none;
+                width:53pt'>NKM13</td>
+                <td class=xl85 width=121 style='border-top:none;border-left:none;width:91pt'>&nbsp;</td>
+                <td class=xl86 style='border-top:none;border-left:none'>GSE3982_BCELL_VS_CENT_MEMORY_CD4_TCELL_UP</td>
+                <td class=xl87 align=right width=145 style='border-top:none;border-left:none;
+                width:109pt'>5.569</td>
+                <td class=xl88 align=right width=87 style='border-top:none;border-left:none;
+                width:65pt'>6.10E-07</td>
+                <td class=xl88 align=right width=83 style='border-top:none;border-left:none;
+                width:62pt'>3.72E-04</td>
+               </tr>
+               <tr height=21 style='height:16.0pt'>
+                <td height=21 class=xl78 width=71 style='height:16.0pt;width:53pt'>NKM13</td>
+                <td class=xl79 width=121 style='width:91pt'>&nbsp;</td>
+                <td class=xl84>GSE3982_DC_VS_NKCELL_UP</td>
+                <td class=xl80 align=right width=145 style='width:109pt'>5.736</td>
+                <td class=xl81 align=right width=87 style='width:65pt'>1.22E-06</td>
+                <td class=xl81 align=right width=83 style='width:62pt'>6.59E-04</td>
+               </tr>
+               <![if supportMisalignedColumns]>
+               <tr height=0 style='display:none'>
+                <td width=71 style='width:53pt'></td>
+                <td width=121 style='width:91pt'></td>
+                <td width=395 style='width:296pt'></td>
+                <td width=145 style='width:109pt'></td>
+                <td width=87 style='width:65pt'></td>
+                <td width=83 style='width:62pt'></td>
+               </tr>
+               <![endif]>
+              </table>
+              
+              </div>
+              
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary close_button rounded-0" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      var $table = $('#table')
+    
+      $(function() {
+        $('#modalTable').on('shown.bs.modal', function () {
+          $table.bootstrapTable('resetView')
+        })
+      })
+    </script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.js"></script>
+
 
 </body>
+</html>
